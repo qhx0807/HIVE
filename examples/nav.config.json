@@ -1,0 +1,22 @@
+{
+  "开发指南": [
+    {
+      "name": "index",
+      "path": "/",
+      "type": "pages"
+    }
+  ],
+  "组件": [
+    {
+      "desc": "基础组件",
+      "path": "/component",
+      "items": [
+        {
+          "desc": "test",
+          "name": "test",
+          "path": "/test"
+        }
+      ]
+    }
+  ]
+}
