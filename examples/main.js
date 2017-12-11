@@ -5,7 +5,10 @@ import App from './App'
 import router from './router'
 import demoBlock from './components/demo-block.vue'
 
+import HIVE from '../packages/index'
+
 Vue.component('demo-block', demoBlock)
+Vue.use(HIVE)
 
 Vue.config.productionTip = false
 
