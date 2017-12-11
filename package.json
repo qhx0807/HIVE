@@ -16,6 +16,8 @@
   "dependencies": {
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
+    "markdown-it-anchor": "^4.0.0",
+    "markdown-it-container": "^2.0.0",
     "vue": "^2.5.2",
     "vue-markdown-loader": "^2.3.0",
     "vue-router": "^3.0.1"
