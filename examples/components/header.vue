@@ -2,7 +2,8 @@
   <header class="page-header" :style="$route.name === 'index' ? 'box-shadow:none' : 'box-shadow:0 10px 60px 0 rgba(29,29,31,0.07)'">
     <div class="page-header-container">
       <router-link :to="{name: 'index'}">
-        <img src="../assets/img/logo1.png" alt="">
+        <i class="iconfont icon-hive"></i>
+        <!-- <img src="../assets/img/hive.png" width="48px" height="48px" alt=""> -->
       </router-link>
       <router-link :to="{name: 'test'}">组件</router-link>
     </div>
@@ -16,6 +17,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@import url('//at.alicdn.com/t/font_504908_3d1btj5my292uik9.css');
 .page-header {
   background-color: #fff;
   box-shadow: 0 8px 60px 0 rgba(29, 29, 31, 0.07);
@@ -33,6 +35,10 @@ export default {
     align-items: center;
     height: 80px;
     justify-content: space-between;
+    .icon-hive{
+      font-size: 45px;
+      // color:#2196F3;
+    }
     a{
       font-size: 14px;
       color: #3f536e;
