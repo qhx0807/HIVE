@@ -1,6 +1,9 @@
 # Button 按钮
+
+基础组件，触发业务逻辑时使用。
+
 ---
-### 基础用法
+#### 基础用法
 <div class="demo-block">
   <i-button type="primary">primary</i-button>
   <i-button type="success">success</i-button>
@@ -13,7 +16,8 @@
 ```
 :::
 
-### Attributes
+#### Attributes
+
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
 |---------- |-------- |---------- |-------------  |-------- |
 | size     | 尺寸   | string  |   default,medium,small            |    —     |
