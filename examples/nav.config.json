@@ -1,6 +1,26 @@
 {
   "开发指南": [
     {
+      "name": "guid",
+      "path": "/index",
+      "desc": "介绍"
+    },
+    {
+      "name": "install",
+      "path": "/index",
+      "desc": "安装"
+    },
+    {
+      "name": "getStart",
+      "path": "/index",
+      "desc": "快速上手"
+    },
+    {
+      "name": "logs",
+      "path": "/index",
+      "desc": "更新日志"
+    },
+    {
       "name": "index",
       "path": "/",
       "type": "pages"
@@ -12,7 +32,7 @@
       "path": "/component",
       "items": [
         {
-          "desc": "test",
+          "desc": "测试",
           "name": "test",
           "path": "/test"
         }
