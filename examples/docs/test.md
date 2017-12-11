@@ -1,11 +1,12 @@
-<div>
+<div class="demo-block">
   <button>test</button>
 </div>
 
 ::: demo
 ```html
 
-  <button>test</button>
+  <button type="primary">test</button>
+  <button type="primary">demo</button>
   
 ```
 :::

@@ -30,7 +30,7 @@ export default {
 
 <style lang="less">
 .demo-container {
-  transition: max-height 0.3s ease;
+  transition: height 0.3s ease;
   overflow: hidden;
 }
 .docs-demo {
@@ -38,8 +38,8 @@ export default {
   height: auto;
   box-sizing: border-box;
   font-size: 14px;
-  background-color: #f7f7f7;
-  border: 1px solid #e2ecf4;
+  background-color: #f8f8f8;
+  border: 1px solid #f7f7f7;
   border-top: none;
   pre code {
     font-family: Consolas, Menlo, Courier, monospace;
@@ -90,7 +90,7 @@ export default {
   margin: 20px 0;
 }
 .docs-demo__code__mobi__header {
-  border-radius: 4px 4px 0 0;
+  // border-radius: 4px 4px 0 0;
   background: -webkit-linear-gradient(rgba(55, 55, 55, 0.98), #545456);
   background: linear-gradient(rgba(55, 55, 55, 0.98), #545456);
   text-align: center;
@@ -105,7 +105,7 @@ export default {
     padding: 0 3px;
     background-color: #a2a2a2;
     margin: 10px auto 0;
-    border-radius: 4px;
+    //border-radius: 4px;
     white-space: nowrap;
     overflow-x: auto;
   }

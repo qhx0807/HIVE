@@ -1,6 +1,6 @@
 <template>
   <div class="pg-index">
-    123
+    index
   </div>
 </template>
 
