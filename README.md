@@ -1,4 +1,4 @@
-# hi-vue
+# HIVE
 
 > A Vue.js project
 
