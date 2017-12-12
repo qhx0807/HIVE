@@ -1,4 +1,4 @@
-import iButton from './button/index.js'
+import iButton from './components/button'
 
 const components = [ iButton ]
 

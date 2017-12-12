@@ -6,6 +6,7 @@ import router from './router'
 import demoBlock from './components/demo-block.vue'
 
 import HIVE from '../packages/index'
+import '../packages/theme-default/lib/hive.css'
 
 Vue.component('demo-block', demoBlock)
 Vue.use(HIVE)
