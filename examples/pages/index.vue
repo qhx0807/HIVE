@@ -32,6 +32,9 @@
       <div class="start">
         <button>Get Start Now</button>
       </div>
+      <div class="content">
+        <img class="tit-img" src="../assets/img/client-img.png" alt="">
+      </div>
     </div>
   </div>
 </template>
@@ -57,7 +60,7 @@ export default {
   background-size: cover;
   background-position: 50% -160px;
   .home-wrap{
-    width: 80%;
+    width: 1280px;
     margin: 0 auto;
     padding-top: 110px;
     .title{
@@ -97,7 +100,7 @@ export default {
       text-align: center;
       margin: 36px 0 0 0;
       img{
-        width: 479px;
+        width: 470px;
         height: inherit;
       }
     }
@@ -122,9 +125,20 @@ export default {
         line-height: 28px;
         transition: all 0.5s ease;
         &:hover{
-          font-size: 24px;
+          font-size: 23px;
           box-shadow: 0 0 20px 0px rgba(57,168,252,.5);
         }
+      }
+    }
+    .content{
+      margin: 170px 0 0 0;
+      padding: 60px 82px;
+      width: 100%;
+      text-align: center;
+      background-color: #fff;
+      box-shadow: 0 0 41px rgba(57,168,252,.15);
+      .tit-img{
+        width: 52px;
       }
     }
   }
