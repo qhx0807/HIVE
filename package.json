@@ -11,12 +11,13 @@
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs",
     "build": "node build/build.js",
-    "style-build":"gulp build --gulpfile build/build-style.js",
-    "style-watch":"gulp watch --gulpfile build/build-style.js",
-    "style":"npm run style-build && npm run style-watch",
-    "start":"npm run dev && npm run style"
+    "style-build": "gulp build --gulpfile build/build-style.js",
+    "style-watch": "gulp watch --gulpfile build/build-style.js",
+    "style": "npm run style-build && npm run style-watch",
+    "start": "npm run dev && npm run style"
   },
   "dependencies": {
+    "inquirer": "^4.0.1",
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
     "markdown-it-anchor": "^4.0.0",
