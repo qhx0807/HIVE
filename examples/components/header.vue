@@ -5,7 +5,7 @@
         <i class="iconfont icon-hive"></i>
         <!-- <img src="../assets/img/hive.png" width="48px" height="48px" alt=""> -->
       </router-link>
-      <router-link :to="{name: 'test'}">组件</router-link>
+      <router-link :to="{name: 'layout'}">组件</router-link>
     </div>
   </header>
 </template>

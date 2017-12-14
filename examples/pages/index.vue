@@ -30,7 +30,7 @@
         <img src="../assets/img/no-prob-img.png" alt="">
       </div>
       <div class="start">
-        <a class="btn" href="#/test">Get Start Now</a>
+        <a class="btn" href="#/layout">Get Start Now</a>
       </div>
       <div class="content">
         <img class="tit-img" src="../assets/img/client-img.png" alt="">
