@@ -1,7 +1,7 @@
-import Col from './col.vue'
+import iCol from './col.vue'
 
-Col.install = function (Vue) {
-  Vue.component(Col.name, Col)
+iCol.install = function (Vue) {
+  Vue.component(iCol.name, iCol)
 }
 
-export default Col
+export default iCol

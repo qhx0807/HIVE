@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'Col',
+  name: 'iCol',
   props: {
     span: [Number, String],
     order: [Number, String],
@@ -22,11 +22,17 @@ export default {
   data() {
     return {
       prefixCls: 'ive-col',
-      gutter: 0,
       responseCls: ['xs', 'sm', 'md', 'lg']
     }
   },
   computed: {
+    gutter() {
+      let val = 0
+      if (this.$parent && this.$parent.$options._componentTag === 'Row') {
+        val = this.$parent.gutter
+      }
+      return val
+    },
     classes() {
       let classList = [
         `${this.prefixCls}`,
@@ -61,12 +67,13 @@ export default {
       let rst = {}
       if (this.gutter !== 0) {
         rst = {
-          paddingLeft: this.gutter / -2 + 'px',
-          paddingRight: this.gutter / -2 + 'px'
+          paddingLeft: this.gutter / 2 + 'px',
+          paddingRight: this.gutter / 2 + 'px'
         }
       }
       return rst
     }
+    
   }
 }
 </script>

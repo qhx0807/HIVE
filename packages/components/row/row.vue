@@ -34,9 +34,8 @@ export default {
   computed: {
     classes() {
       return [
+        `${this.prefixCls}-flex`,
         {
-          [`${this.prefixCls}`]: !this.type,
-          [`${this.prefixCls}-${this.type}`]: !this.type,
           [`${this.prefixCls}-${this.type}-${this.align}`]: !!this.align,
           [`${this.prefixCls}-${this.type}-${this.justify}`]: !!this.justify,
           [`${this.className}`]: !!this.className
