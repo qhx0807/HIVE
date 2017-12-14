@@ -32,6 +32,11 @@
       "path": "/component",
       "items": [
         {
+          "desc": "布局",
+          "name": "layout",
+          "path": "/layout"
+        },
+        {
           "desc": "测试",
           "name": "test",
           "path": "/test"
