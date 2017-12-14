@@ -21,7 +21,7 @@
       </g>
     </svg> -->
     <div class="home-wrap">
-      <div class="title">
+      <div class="title"  :class="{visible : visible}">
         <span class="first">great</span>
         <strong>HIVE</strong>
         <span>a ui components of vue 2.x</span>
@@ -30,7 +30,7 @@
         <img src="../assets/img/no-prob-img.png" alt="">
       </div>
       <div class="start">
-        <button>Get Start Now</button>
+        <a class="btn" href="#/test">Get Start Now</a>
       </div>
       <div class="content">
         <img class="tit-img" src="../assets/img/client-img.png" alt="">
@@ -42,7 +42,15 @@
 <script>
 export default {
   data () {
-    return {}
+    return {
+      visible: false
+    }
+  },
+  created () { },
+  mounted () {
+    this.$nextTick(() => {
+      this.visible = true
+    })
   }
 }
 </script>
@@ -69,10 +77,17 @@ export default {
       color: #a275ff;
       font-weight: 550;
       line-height: 68px;
-      visibility: visible;
+      visibility: hidden;
+      opacity:0;
+      transform:translate3d(0,100%,0);
       animation-duration: 2s;
       animation-delay: .5s;
       animation-name: fadeInUp;
+      &.visible{
+        visibility: visible;
+        transform:none;
+        opacity: 1;
+      }
       .first{
         position: relative;
         color: #191617;
@@ -108,7 +123,7 @@ export default {
       margin: 70px 0 0 0;
       width: 100%;
       text-align: center;
-      button{
+      .btn{
         border: none;
         outline: none;
         cursor: pointer;

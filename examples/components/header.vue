@@ -36,8 +36,8 @@ export default {
     height: 80px;
     justify-content: space-between;
     .icon-hive{
-      font-size: 45px;
-      // color:#2196F3;
+      font-size: 48px;
+      // color:#a275ff;
     }
     a{
       font-size: 14px;
