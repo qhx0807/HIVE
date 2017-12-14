@@ -1,6 +1,8 @@
 import iButton from './components/button'
+import Row from './components/row'
+import Col from './components/col'
 
-const components = [ iButton ]
+const components = [iButton, Row, Col]
 
 const install = function (Vue) {
   if (install.installed) return
@@ -13,5 +15,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export default {
   install,
-  iButton
+  iButton,
+  Row,
+  Col
 }
