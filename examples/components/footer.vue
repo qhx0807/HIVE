@@ -7,8 +7,8 @@
             <img src="http://os70o8m36.bkt.clouddn.com/avatar.jpg" width="80">
           </a>
           <div>
-            <p>author: monkeyWang</p>
-            <p>email: 2424880409@qq.com </p>
+            <p>author: qhx0807</p>
+            <p>email: 820240134@qq.com </p>
             <p>github: <a href="https://github.com/qhx0807">https://github.com/qhx0807</a></p>
           </div>
         </i-col>
