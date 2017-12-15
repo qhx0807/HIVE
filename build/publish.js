@@ -31,12 +31,12 @@ inquirer
   .then(function(answers) {
     let buildCmd = `npm run build`
     let checkoutCmd = `git checkout gh-pages`
-    let updateCmd = `rm -rf index.html &&
-                    rm -rf static &&
-                    cd dist &&
-                    mv * ../ &&
-                    rm -rf ./dist &&
-                    cd ..`
+    let updateCmd = `git rm -rf index.html &&
+                     git rm -rf static &&
+                     cd dist &&
+                     git mv * ../ &&
+                     git rm -rf ./dist &&
+                     cd ..`
     let publishCmd = `git add . &&
                       git commit -m '${answers.message}' &&
                       git push`
