@@ -37,9 +37,14 @@
           "path": "/layout"
         },
         {
-          "desc": "测试",
-          "name": "test",
-          "path": "/test"
+          "desc": "图标",
+          "name": "icon",
+          "path": "/icon"
+        },
+        {
+          "desc": "按钮",
+          "name": "button",
+          "path": "/button"
         }
       ]
     }
