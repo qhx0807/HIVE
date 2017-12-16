@@ -28,7 +28,7 @@
   ],
   "组件": [
     {
-      "desc": "基础组件",
+      "desc": "Basic",
       "path": "/component",
       "items": [
         {
@@ -45,6 +45,39 @@
           "desc": "按钮",
           "name": "button",
           "path": "/button"
+        }
+      ]
+    },
+    {
+      "desc":"From",
+      "path": "/component",
+      "items": [
+        {
+          "desc": "输入框",
+          "name": "input",
+          "path": "/input"
+        }
+      ]
+    },
+    {
+      "desc":"View",
+      "path": "/component",
+      "items": [
+        {
+          "desc": "头像",
+          "name": "avatar",
+          "path": "/avatar"
+        }
+      ]
+    },
+    {
+      "desc":"Feedback",
+      "path": "/component",
+      "items": [
+        {
+          "desc": "全局提示",
+          "name": "message",
+          "path": "/message"
         }
       ]
     }
