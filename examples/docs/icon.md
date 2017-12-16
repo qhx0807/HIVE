@@ -17,7 +17,7 @@
 ```
 
 <div class="demo-block">
-  <Icon type="icon-computer" size="22"></Icon>&nbsp;&nbsp;
+  <Icon type="icon-computer" size="22" color="#848CFF"></Icon>&nbsp;&nbsp;
   <Icon type="icon-volume" size="22" color="#B1E9F6"></Icon>&nbsp;&nbsp;
   <Icon type="icon-file" size="22" color="orange"></Icon>
 </div>
@@ -26,17 +26,19 @@
 
 ```html
   <Icon type="icon-computer" size="22"></Icon>
-  <Icon type="icon-volume" size="22" color="#B1E9F6"></Icon>
-  <Icon type="icon-file" size="22" color="orange"></Icon>
+  <Icon type="icon-volume" size="22"></Icon>
+  <Icon type="icon-file" size="22"></Icon>
 ```
 
 :::
 
 #### 图标示例
 
+点击图标即可复制相应图标代码
+
 <ul class="demo-icon">
   <li v-for="(item, index) in icons" :key="index">
-    <span>
+    <span class="demo-span" :data-clipboard-text="clipText(item)">
       <Icon :type="item" size="24"></Icon>
       {{item}}
     </span>
@@ -45,19 +47,36 @@
 
 <script>
 import iconConf from '../icon.config.json'
+import Clipboard from 'clipboard'
 export default {
   data () {
     return {
-      icons: iconConf
+      icons: iconConf,
+      clipboard: null
     }
   },
+  mounted () {
+    this.clipboard = new Clipboard('.demo-span')
+    this.clipboard.on('success', function(e) {
+      alert('复制成功！')
+      e.clearSelection()
+    })
+  },
+  beforeDestroy () {
+    this.clipboard.destroy()
+  },
+  methods: {
+    clipText (val) {
+      return `<Icon type="${val}"></Icon>`
+    }
+  }
 }
 </script>
 
 <style lang="less" scoped>
   .demo-icon{
     padding:0;
-    margin:0;
+    margin:10px 0;
     list-style: none;
     li{
       float:left;
@@ -72,6 +91,10 @@ export default {
         vertical-align: middle;
         line-height:normal;
         display: inline-block;
+        cursor: pointer;
+        &:hover{
+          color: #848CFF;
+        }
         i{
           display: block;
           margin:0 20px;
