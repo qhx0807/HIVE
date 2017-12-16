@@ -7,7 +7,7 @@ const rename = require('gulp-rename')
 const autoprefixer = require('gulp-autoprefixer')
 
 // 编译less
-gulp.task('css', function() {
+gulp.task('css', function () {
   gulp
     .src('../packages/theme-default/index.less')
     .pipe(less())
@@ -22,14 +22,14 @@ gulp.task('css', function() {
 })
 
 // 拷贝字体文件
-gulp.task('fonts', function() {
+gulp.task('fonts', function () {
   gulp
-    .src('../src/styles/common/iconfont/fonts/*.*')
+    .src('../packages/theme-default/fonts/*.*')
     .pipe(gulp.dest('../packages/theme-default/lib/fonts'))
 })
 
 gulp.task('build', ['css', 'fonts'])
 
-gulp.task('watch', function() {
+gulp.task('watch', function () {
   gulp.watch('../packages/theme-default/*.less', ['css'])
 })
