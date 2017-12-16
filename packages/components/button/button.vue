@@ -1,6 +1,8 @@
 <template>
   <button :class="classes" :disabled="disabled" @click="onHandleClick">
-    <slot></slot>
+    <Icon class="ive-loading-loop" type="icon-loading" v-if="loading"></Icon>
+    <Icon :type="icon" v-if="icon && !loading"></Icon>
+    <span v-if="isIcon" ref="slot"><slot></slot></span>
   </button>
 </template>
 
@@ -51,6 +53,9 @@ export default {
         }
       ]
     }
+  },
+  mounted () {
+    this.isIcon = this.$slots.default !== undefined;
   },
   methods: {
     onHandleClick(event){

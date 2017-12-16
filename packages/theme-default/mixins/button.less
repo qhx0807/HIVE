@@ -45,8 +45,76 @@
   }
 }
 
-// button
+.btn-group-base(@btnClassName) {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  > .@{btnClassName} {
+      position: relative;
+      float: left;
+      &:hover,
+      //&:focus,
+      &:active,
+      &.active {
+          z-index: 2;
+      }
+  }
 
+  & .@{btnClassName}-icon-only .ivu-icon {
+      font-size: 14px;
+      position: relative;
+      top: 1px;
+  }
+
+  &-large .@{btnClassName}-icon-only .ivu-icon{
+      font-size: 16px;
+      top: 2px;
+  }
+
+  &-small .@{btnClassName}-icon-only .ivu-icon{
+      font-size: 12px;
+      top: 0;
+  }
+
+  &-circle .@{btnClassName} {
+      border-radius: @btn-circle-size;
+  }
+
+  // size
+  &-large&-circle .@{btnClassName} {
+      border-radius: @btn-circle-size-large;
+  }
+  &-large {
+      & > .@{btnClassName} {
+          .btn-size(@btn-padding-large; @btn-font-size-large; @btn-border-radius);
+      }
+  }
+
+  &-small&-circle .@{btnClassName} {
+      border-radius: @btn-circle-size-small;
+  }
+  &-small {
+      & > .@{btnClassName}{
+          .btn-size(@btn-padding-small; @btn-font-size; @btn-border-radius-small);
+          > .@{css-prefix-iconfont} {
+              font-size: @btn-font-size;
+          }
+      }
+  }
+}
+
+.btn-group-vertical-base(@btnClassName) {
+  display: inline-block;
+  vertical-align: middle;
+  > .@{btnClassName} {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      float: none;
+  }
+}
+
+// button
 .btn() {
   display: inline-block;
   margin: 0;
@@ -200,4 +268,94 @@
 
 .square(@size) {
   .size(@size; @size);
+}
+
+// Group
+.btn-group(@btnClassName: ive-btn) {
+  .btn-group-base(@btnClassName);
+
+  .@{btnClassName} + .@{btnClassName},
+  .@{btnClassName} + &,
+  & + .@{btnClassName},
+  & + & {
+      margin-left: -1px;
+  }
+
+  .@{btnClassName}:not(:first-child):not(:last-child) {
+      border-radius: 0;
+  }
+
+  &:not(&-vertical) > .@{btnClassName}:first-child {
+      margin-left: 0;
+      &:not(:last-child) {
+          border-bottom-right-radius: 0;
+          border-top-right-radius: 0;
+      }
+  }
+
+  &:not(&-vertical) > .@{btnClassName}:last-child:not(:first-child) {
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+  }
+
+  & > & {
+      float: left;
+  }
+
+  & > &:not(:first-child):not(:last-child) > .@{btnClassName} {
+      border-radius: 0;
+  }
+
+  &:not(&-vertical) > &:first-child:not(:last-child) {
+      > .@{btnClassName}:last-child {
+          border-bottom-right-radius: 0;
+          border-top-right-radius: 0;
+          padding-right: 8px;
+      }
+  }
+
+  &:not(&-vertical) > &:last-child:not(:first-child) > .@{btnClassName}:first-child {
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+      padding-left: 8px;
+  }
+}
+
+.btn-group-vertical(@btnClassName: ive-btn) {
+  .btn-group-vertical-base(@btnClassName);
+
+  .@{btnClassName} + .@{btnClassName},
+  .@{btnClassName} + &,
+  & + .@{btnClassName},
+  & + & {
+      margin-top: -1px;
+      margin-left: 0px;
+  }
+
+  > .@{btnClassName}:first-child {
+      margin-top: 0;
+      &:not(:last-child) {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+      }
+  }
+
+  > .@{btnClassName}:last-child:not(:first-child) {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+  }
+
+  & > &:first-child:not(:last-child) {
+      > .@{btnClassName}:last-child {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+          padding-bottom: 8px;
+      }
+  }
+
+  & > &:last-child:not(:first-child) > .@{btnClassName}:first-child {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+      padding-top: 8px;
+  }
 }
