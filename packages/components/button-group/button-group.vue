@@ -20,7 +20,7 @@ export default {
   },
   data () {
     return {
-      prefixCls: 'ive-btn',
+      prefixCls: 'ive-btn-group',
       isIcon: true,
     }
   },

@@ -37,11 +37,17 @@
 #### 图标及形状
 
 <div class="demo-block">
-  <i-button type="primary" shape="circle" icon="icon-user">1</i-button>
+  <i-button type="primary" shape="circle" icon="icon-user">Name</i-button>
   <i-button type="success" shape="circle" icon="icon-user"></i-button>
   <i-button type="info">Info</i-button>
   <i-button type="success" shape="circle">Success</i-button>
   <i-button type="success" shape="circle">Success</i-button>
+  <ButtonGroup size="large">
+    <i-button type="primary">S</i-button>
+    <i-button type="primary">M</i-button>
+    <i-button type="primary">L</i-button>
+    <i-button type="primary">xL</i-button>
+  </ButtonGroup>
 </div>
 
 

@@ -1,19 +1,17 @@
 @btn-prefix-cls: ~"@{css-prefix}btn";
-
 .@{btn-prefix-cls} {
     .btn;
-
-    &-long{
+    &-long {
         width: 100%;
     }
-    .iconfont{
+    .iconfont {
         font-size: 12px;
     }
-    & > .iconfont + span, & > span + .iconfont{
+    &>.iconfont+span,
+    &>span+.iconfont {
         margin-left: 4px;
         font-size: 12px;
     }
-
     &-primary {
         .btn-primary;
 
@@ -21,7 +19,6 @@
             border-right-color: @btn-group-border;
             border-left-color: @btn-group-border;
         }
-
         .@{btn-prefix-cls}-group:not(.@{btn-prefix-cls}-group-vertical) &:first-child {
             &:not(:last-child) {
                 border-right-color: @btn-group-border;
@@ -30,20 +27,17 @@
                 }
             }
         }
-
         .@{btn-prefix-cls}-group:not(.@{btn-prefix-cls}-group-vertical) &:last-child:not(:first-child),
-        .@{btn-prefix-cls}-group:not(.@{btn-prefix-cls}-group-vertical) & + .@{btn-prefix-cls} {
+        .@{btn-prefix-cls}-group:not(.@{btn-prefix-cls}-group-vertical) &+.@{btn-prefix-cls} {
             border-left-color: @btn-group-border;
             &[disabled] {
                 border-left-color: @btn-default-border;
             }
         }
-
         .@{btn-prefix-cls}-group-vertical &:not(:first-child):not(:last-child) {
             border-top-color: @btn-group-border;
             border-bottom-color: @btn-group-border;
         }
-
         .@{btn-prefix-cls}-group-vertical &:first-child {
             &:not(:last-child) {
                 border-bottom-color: @btn-group-border;
@@ -52,53 +46,42 @@
                 }
             }
         }
-
         .@{btn-prefix-cls}-group-vertical &:last-child:not(:first-child),
-        .@{btn-prefix-cls}-group-vertical & + .@{btn-prefix-cls} {
+        .@{btn-prefix-cls}-group-vertical &+.@{btn-prefix-cls} {
             border-top-color: @btn-group-border;
             &[disabled] {
                 border-bottom-color: @btn-default-border;
             }
         }
     }
-
     &-default {
         .btn-default;
     }
-
     &-ghost {
         .btn-ghost;
     }
-
-    &-dashed{
+    &-dashed {
         .btn-dashed;
     }
-
-    &-text{
+    &-text {
         .btn-text;
     }
-
     &-success {
-        .btn-color(@success-color);
+        .btn-status-color(@success-color);
     }
-
     &-warning {
-        .btn-color(@warning-color);
+        .btn-status-color(@warning-color);
     }
-
     &-error {
-        .btn-color(@error-color);
+        .btn-status-color(@error-color);
     }
-
     &-info {
-        .btn-color(@info-color);
+        .btn-status-color(@info-color);
     }
-
     &-circle,
     &-circle-outline {
         .btn-circle(@btn-prefix-cls);
     }
-
     &:before {
         position: absolute;
         top: -1px;
@@ -114,20 +97,16 @@
         pointer-events: none;
         display: none;
     }
-
     &&-loading {
         pointer-events: none;
         position: relative;
-
         &:before {
             display: block;
         }
     }
-
     &-group {
         .btn-group(@btn-prefix-cls);
     }
-
     &-group-vertical {
         .btn-group-vertical(@btn-prefix-cls);
     }

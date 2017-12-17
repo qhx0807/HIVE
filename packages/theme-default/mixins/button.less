@@ -23,13 +23,14 @@
   .btn-color(@color, @background, @border);
 
   &:hover,
-  &:focus {
+  // &:focus 点击按钮 移开鼠标后还有阴影效果 未复原
+  {
     .btn-color(tint(@color, 20%); tint(@background, 20%); tint(@border, 20%));
   }
 
   &:active,
   &.active {
-    .btn-color(tint(@color, 5%); tint(@background, 5%); tint(@border, 5%));
+    .btn-color(shade(@color, 5%); shade(@background, 5%); shade(@border, 5%));
   }
 
   &:disabled,
@@ -224,7 +225,7 @@
 }
 
 // Color
-.btn-color(@color) {
+.btn-status-color(@color) {
   .btn-status(@btn-primary-color; @color; @color);
   &:hover,
   &:active,
