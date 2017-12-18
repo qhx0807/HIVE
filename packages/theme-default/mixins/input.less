@@ -1,0 +1,70 @@
+@input-prefix-cls: ~'@{css-prefix}input';
+
+.hover(@color: @input-hover-border-color) {
+  border-color: @color;
+}
+
+.hover-error() {
+  border-color: @error-color;
+}
+
+.focus(@color: @input-hover-border-color) {
+  border-color: @color;
+}
+
+.focus-error() {
+  border-color: @error-color;
+}
+
+.disabled() {
+  background-color: @input-disabled-bg;
+  opacity: 1;
+  cursor: @cursor-disabled;
+  color: #ccc;
+  &:hover {
+    .hover(@input-border-color);
+  }
+}
+
+.input() {
+  .placeholder();
+  appearance: none;
+  display: inline-block;
+  width: 100%;
+  height: @input-height-base;
+  line-height: @input-height-base;
+  padding: @input-padding-vertical-base @input-padding-horizontal;
+  font-size: @font-size-base;
+  outline: none;
+  border: 1px solid @input-border-color;
+  border-radius: @btn-border-radius;
+  color: @input-color;
+  background-color: @input-bg;
+  background-image: none;
+  position: relative;
+  cursor: text;
+  transition: all @transition-time @ease-in-out;
+
+  &:hover {
+    .hover();
+  }
+
+  &:focus {
+    .focus();
+  }
+
+  &[disabled],
+  fieldset[disabled] & {
+    .disabled();
+  }
+}
+
+.input-error() {
+  border: 1px solid @error-color;
+  &:hover {
+      .hover-error();
+  }
+  &:focus {
+      .focus-error();
+  }
+}

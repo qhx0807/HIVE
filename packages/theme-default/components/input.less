@@ -1,0 +1,46 @@
+@input-prefix-cls: ~'@{css-prefix}input';
+
+.@{input-prefix-cls} {
+  .input();
+
+  &-has-icon {
+    padding-left: 33px;
+  }
+
+  &-wrap {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    vertical-align: middle;
+    line-height: normal;
+  }
+
+  &-preicon {
+    width: 32px;
+    height: @input-height-base;
+    line-height: @input-height-base;
+    font-size: 16px;
+    text-align: center;
+    color: @subsidiary-color;
+    position: absolute;
+    left: 0;
+    z-index: 3;
+  }
+
+  &-tailicon {
+    width: 32px;
+    height: @input-height-base;
+    line-height: @input-height-base;
+    font-size: 16px;
+    text-align: center;
+    color: @subsidiary-color;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 3;
+  }
+
+  &-error {
+    .input-error();
+  }
+}
