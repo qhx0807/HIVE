@@ -39,6 +39,16 @@ export default {
 html,body{
   height: 100%;
 }
+.loading {
+  display: inline-block;
+  animation: spin 1s infinite linear;
+}
+@keyframes spin { 
+  100% { 
+    transform: rotate(360deg); 
+  } 
+}
+
 #app {
   height: 100%;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
