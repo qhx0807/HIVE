@@ -3,8 +3,9 @@ import ButtonGroup from './components/button-group'
 import Row from './components/row'
 import iCol from './components/col'
 import Icon from './components/icon'
+import iInput from './components/input'
 
-const components = [iButton, ButtonGroup, Row, iCol, Icon]
+const components = [iButton, ButtonGroup, Row, iCol, Icon, iInput]
 
 const install = function (Vue) {
   if (install.installed) return
@@ -21,5 +22,6 @@ export default {
   ButtonGroup,
   Row,
   iCol,
+  iInput,
   Icon
 }

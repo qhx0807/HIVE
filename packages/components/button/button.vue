@@ -1,6 +1,6 @@
 <template>
   <button :class="classes" :disabled="disabled" @click="onHandleClick">
-    <Icon class="ive-loading-loop" type="icon-loading" v-if="loading"></Icon>
+    <Icon class="loading" type="icon-refresh" v-if="loading"></Icon>
     <Icon :type="icon" v-if="icon && !loading"></Icon>
     <span v-if="isIcon" ref="slot">
       <slot></slot>
@@ -35,11 +35,11 @@ export default {
   data() {
     return {
       prefixCls: 'ive-btn',
-      isIcon: true,
+      isIcon: true
     }
   },
   computed: {
-    classes() {
+    classes () {
       return [
         `${this.prefixCls}`,
         {
@@ -48,12 +48,13 @@ export default {
           [`${this.prefixCls}-${this.size}`]: !!this.size,
           [`${this.prefixCls}-${this.shape}`]: !!this.shape,
           [`${this.prefixCls}-loading`]: this.loading != null && this.loading,
-          [`${this.prefixCls}-icon-only`]: !this.isIcon && (!!this.icon || this.loading)
+          [`${this.prefixCls}-icon-only`]:
+            !this.isIcon && (!!this.icon || this.loading)
         }
       ]
     }
   },
-  mounted() {
+  mounted () {
     this.isIcon = this.$slots.default !== undefined
   },
   methods: {
