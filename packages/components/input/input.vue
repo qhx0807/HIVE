@@ -88,7 +88,6 @@ export default {
     },
     updateValue(value) {
       if (value === this.value) return
-      this.value = value
       this.$emit('input', value)
     }
   },

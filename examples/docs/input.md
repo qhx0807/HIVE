@@ -11,7 +11,7 @@
 export default {
   data(){
     return {
-      inputval:12344567
+      inputval:''
     }
   },
   methods:{

@@ -45,6 +45,14 @@
   </li>
 </ul>
 
+#### Icon Attributes
+
+| 参数     | 说明                         | 类型    | 可选值                                         | 默认值  |
+| -------- | ---------------------------- | ------- | ---------------------------------------------- | ------- |
+| size     | 尺寸， font-size值                        | String,Number  |                           | - |
+| type     | 图标库的名称                         | String  | -                            | - |
+| color     | css color 颜色值                         | String  | -                            | - |
+
 <script>
 import iconConf from '../icon.config.json'
 import Clipboard from 'clipboard'
@@ -78,6 +86,9 @@ export default {
     padding:0;
     margin:10px 0;
     list-style: none;
+    height:auto;
+    width:100%;
+    display:block;
     li{
       float:left;
       width:16%;
