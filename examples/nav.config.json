@@ -56,7 +56,12 @@
           "desc": "输入框",
           "name": "input",
           "path": "/input"
-        }
+        },
+        {
+            "desc": "多文本输入",
+            "name": "textarea",
+            "path": "/textarea"
+          }
       ]
     },
     {
