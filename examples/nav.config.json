@@ -58,10 +58,15 @@
           "path": "/input"
         },
         {
-            "desc": "多文本输入",
-            "name": "textarea",
-            "path": "/textarea"
-          }
+          "desc": "多文本输入",
+          "name": "textarea",
+          "path": "/textarea"
+        },
+        {
+          "desc": "单选框",
+          "name": "radio",
+          "path": "/radio"
+        }
       ]
     },
     {
