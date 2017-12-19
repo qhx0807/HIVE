@@ -1,0 +1,71 @@
+@text-prefix-cls: ~'@{css-prefix}textarea';
+
+
+.@{text-prefix-cls} {
+  .placeholder();
+  appearance: none;
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  padding: @input-padding-vertical-base @input-padding-horizontal;
+  font-size: @font-size-base;
+  outline: none;
+  border: 1px solid @input-border-color;
+  border-radius: @btn-border-radius;
+  color: @input-color;
+  background-color: @input-bg;
+  background-image: none;
+  position: relative;
+  resize: none;
+  cursor: text;
+  transition: all @transition-time @ease-in-out;
+  
+  &:hover {
+    .hover();
+  }
+
+  &:focus {
+    .focus();
+  }
+
+  &[disabled],
+  fieldset[disabled] & {
+    .disabled();
+  }
+
+  &-wrap{
+    position: relative;
+  }
+
+  &-wrap-auto{
+    position: relative;
+    pre{
+      display: block;
+      visibility: hidden;
+      margin: 0;
+      padding: 4px 8px;
+      background-color: transparent;
+      overflow: scroll;
+      // min-height: 100px;
+    }
+  }
+
+  &-auto{
+    position:absolute;
+    top:0;
+    left:0;
+    height:100%;
+  }
+
+  &-limit{
+    position: absolute;
+    font-size: 12px;
+    color: #d1dbe5;
+    right: 6px;
+    bottom: 6px;
+    .num{
+      color: #13ce66;
+    }
+  }
+}
+
