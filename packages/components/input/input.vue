@@ -7,15 +7,15 @@
       :class="inputClasses"
       :disabled="disabled"
       :readonly="readonly"
-      :maxLength="maxLength"
+      :maxlength="maxlength"
       :value="inputValue"
       :prefix="prefix"
       :tailfix="tailfix"
       :spellcheck="spellcheck"
+      :autofocus="autofocus"
       @keyup.enter="handleEnter"
       @focus="hanleFocus"
       @input="handleInput"
-      
     >
     <Icon :type="tailfix" class="ive-input-tailicon"></Icon>
   </div>
@@ -45,13 +45,17 @@ export default {
       type: Boolean,
       default: false
     },
-    maxLength: Number,
+    maxlength: Number,
     spellcheck: {
       type: Boolean,
       default: false
     },
+    autofocus: {
+      type: Boolean,
+      default: false
+    },
     prefix: String,
-    tailfix: String
+    tailfix: String,
   },
   model: {
     prop: 'value',

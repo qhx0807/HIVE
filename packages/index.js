@@ -4,8 +4,9 @@ import Row from './components/row'
 import iCol from './components/col'
 import Icon from './components/icon'
 import iInput from './components/input'
+import iText from './components/textarea'
 
-const components = [iButton, ButtonGroup, Row, iCol, Icon, iInput]
+const components = [iButton, ButtonGroup, Row, iCol, Icon, iInput, iText]
 
 const install = function (Vue) {
   if (install.installed) return
@@ -23,5 +24,6 @@ export default {
   Row,
   iCol,
   iInput,
+  iText,
   Icon
 }
