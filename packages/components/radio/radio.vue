@@ -1,10 +1,13 @@
 <template>
   <label :class="wrapClasses">
-    <span></span>
-    <input 
+    <span :class="innerClasses">
+      <span class="ive-radio-inner-span"></span>
+      <input 
       type="radio"
+      class="ive-radio-inner-input"
       :value="currentValue"
       :disabled="disabled">
+    </span>
     <slot>{{ label }}</slot>
   </label>
 </template>
@@ -35,6 +38,20 @@ export default {
         {
           [`${this.prefixCls}-wrap-checked`] : this.currentValue,
           [`${this.prefixCls}-wrap-disabled`] : this.disabled
+        }
+      ]
+    },
+    innerClasses(){
+      return [
+        `${this.prefixCls}-inner`
+      ]
+    },
+    radioClasses(){
+      return [
+        `${this.prefixCls}`,
+        {
+          [`${this.prefixCls}-checked`]: this.currentValue,
+          [`${this.prefixCls}-disabled`]: this.disabled
         }
       ]
     }

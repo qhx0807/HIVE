@@ -1,6 +1,31 @@
 @radio-prefix-cls: ~"@{css-prefix}radio";
 
-.@{radio-prefix-cls}-wrap{
-  display: inline-block;
+.@{radio-prefix-cls} {
+  &-wrap {
+    vertical-align: middle;
+    font-size: 14px;
+    display: inline-block;
+    position: relative;
+    white-space: nowrap;
+    cursor: pointer;
+    margin-right: 8px;
+    user-select: none;
+  }
   
+  &-inner{
+    position: relative;
+    margin-right: 4px;
+    &-span{
+      vertical-align: middle;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+
+    &-input{
+      vertical-align: middle;
+    }
+  }
 }
