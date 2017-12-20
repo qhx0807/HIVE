@@ -3,11 +3,12 @@
     <span :class="innerClasses">
       <span :class="spanClasses"></span>
       <input 
-      type="radio"
-      class="ive-radio-inner-input"
-      :value="currentValue"
-      :disabled="disabled"
-      @change="handleChange">
+        type="radio"
+        class="ive-radio-inner-input"
+        :value="value"
+        :disabled="disabled"
+        :checked="currentValue"
+        @change="change">
     </span>
     <slot>{{ label }}</slot>
   </label>
@@ -26,27 +27,29 @@ export default {
       type: Boolean,
       default: false
     },
-    trueValue: {
-      type: [String, Number, Boolean],
-      default: true
-    },
-    falseValue: {
-      type: [String, Number, Boolean],
+    checked:{
+      type: Boolean,
       default: false
     }
   },
   data() {
     return {
       prefixCls: 'ive-radio',
-      currentValue: this.value
+      group: false,
+      currentValue: this.checked,
     }
   },
   model: {
     prop: 'value',
-    event: 'input'
+    event: 'change'
   },
   mounted () {
-    this.updateValue()
+    if(this.$parent.$options.name === 'RadioGroup') {
+      this.group = true
+      this.$parent.updateValue()
+    }else{
+      this.currentValue = this.checked
+    }
   },
   computed: {
     wrapClasses () {
@@ -66,24 +69,31 @@ export default {
     }
   },
   methods: {
-    handleChange (event){
+    change (event){
       if (this.disabled) return false
+
       let checked = event.target.checked
-      let value = checked ? this.trueValue : this.falseValue
-      this.$emit('input', value)
-      this.$emit('on-change', value)
-      this.updateValue()
+      this.currentValue = checked
+      this.$emit('change', checked)
+
+      if (!this.group){
+        this.$emit('on-change', checked)
+      }
+
+      if (this.group && this.label !== undefined){
+        this.$parent.change({
+          value: this.label
+        })
+      }
+
     },
     updateValue () {
-      this.currentValue = this.value === this.trueValue;
+    
     }
   },
   watch: {
     value(val){
-      if (val !== this.trueValue && val !== this.falseValue) {
-        throw 'error: Value should be trueValue or falseValue.'
-      }
-      this.updateValue()
+      this.currentValue = val
     }
   },
 
