@@ -1,12 +1,13 @@
 <template>
   <label :class="wrapClasses">
     <span :class="innerClasses">
-      <span class="ive-radio-inner-span"></span>
+      <span :class="spanClasses"></span>
       <input 
       type="radio"
       class="ive-radio-inner-input"
       :value="currentValue"
-      :disabled="disabled">
+      :disabled="disabled"
+      @change="handleChange">
     </span>
     <slot>{{ label }}</slot>
   </label>
@@ -17,45 +18,75 @@ export default {
   name: 'Radio',
   props: {
     label: [String, Number],
-    currentValue:{
-      type:Boolean,
+    value: {
+      type: [String, Number, Boolean],
       default: false
     },
-    disabled:{
-      type:Boolean,
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    trueValue: {
+      type: [String, Number, Boolean],
+      default: true
+    },
+    falseValue: {
+      type: [String, Number, Boolean],
       default: false
     }
   },
-  data () {
+  data() {
     return {
-      prefixCls:'ive-radio',
+      prefixCls: 'ive-radio',
+      currentValue: this.value
     }
   },
+  model: {
+    prop: 'value',
+    event: 'input'
+  },
+  mounted () {
+    this.updateValue()
+  },
   computed: {
-    wrapClasses(){
+    wrapClasses () {
       return [
         `${this.prefixCls}-wrap`,
         {
-          [`${this.prefixCls}-wrap-checked`] : this.currentValue,
-          [`${this.prefixCls}-wrap-disabled`] : this.disabled
+          [`${this.prefixCls}-disabled`]: this.disabled,
+          [`${this.prefixCls}-checked`]: this.currentValue
         }
       ]
     },
-    innerClasses(){
-      return [
-        `${this.prefixCls}-inner`
-      ]
+    innerClasses () {
+      return [`${this.prefixCls}-inner`]
     },
-    radioClasses(){
-      return [
-        `${this.prefixCls}`,
-        {
-          [`${this.prefixCls}-checked`]: this.currentValue,
-          [`${this.prefixCls}-disabled`]: this.disabled
-        }
-      ]
+    spanClasses () {
+      return [`${this.prefixCls}-inner-span`]
     }
-  }
+  },
+  methods: {
+    handleChange (event){
+      if (this.disabled) return false
+      let checked = event.target.checked
+      let value = checked ? this.trueValue : this.falseValue
+      this.$emit('input', value)
+      this.$emit('on-change', value)
+      this.updateValue()
+    },
+    updateValue () {
+      this.currentValue = this.value === this.trueValue;
+    }
+  },
+  watch: {
+    value(val){
+      if (val !== this.trueValue && val !== this.falseValue) {
+        throw 'error: Value should be trueValue or falseValue.'
+      }
+      this.updateValue()
+    }
+  },
+
 }
 </script>
 

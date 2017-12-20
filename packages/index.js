@@ -5,9 +5,9 @@ import iCol from './components/col'
 import Icon from './components/icon'
 import iInput from './components/input'
 import iText from './components/textarea'
-import Radio from './components/radio'
+import {Radio, RadioGroup} from './components/radio'
 
-const components = [iButton, ButtonGroup, Row, iCol, Icon, iInput, iText, Radio]
+const components = [iButton, ButtonGroup, Row, iCol, Icon, iInput, iText, Radio, RadioGroup]
 
 const install = function (Vue) {
   if (install.installed) return
@@ -27,5 +27,6 @@ export default {
   iInput,
   iText,
   Icon,
+  RadioGroup,
   Radio
 }
