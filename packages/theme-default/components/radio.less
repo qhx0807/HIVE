@@ -8,7 +8,7 @@
     position: relative;
     white-space: nowrap;
     cursor: pointer;
-    margin-right: 8px;
+    margin-right: 12px;
     user-select: none;
   }
   
@@ -85,4 +85,16 @@
     }
   }
 
+  &-group{
+    display: inline-block;
+    font-size: 13px;
+    vertical-align: middle;
+    &-vertical{
+      .@{radio-prefix-cls}-wrap {
+          display: block;
+          height: 30px;
+          line-height: 30px;
+      }
+    }
+  }
 }
