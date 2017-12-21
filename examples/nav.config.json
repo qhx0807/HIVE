@@ -71,6 +71,11 @@
           "desc": "多选框",
           "name": "checkbox",
           "path": "/checkbox"
+        },
+        {
+        "desc": "开关",
+        "name": "switch",
+        "path": "/switch"
         }
       ]
     },
