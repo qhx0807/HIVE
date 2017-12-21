@@ -3,17 +3,17 @@
 #### 基本用法
 
 <div class="demo-block">
-  <i-Switch v-model="value1"></i-Switch>  <em>// {{value1}}</em>
+  <i-switch v-model="value1"></i-switch>  <em>// {{value1}}</em>
   <br>
   <br>
-  <i-Switch v-model="value1" disabled></i-Switch>  <em>// disabled</em>
+  <i-switch v-model="value1" disabled></i-switch>  <em>// disabled</em>
   
 </div>
 
 ::: demo
 
 ```html
-<i-Switch v-model="value1"></i-Switch>
+<i-switch v-model="value1"></i-switch>
 ```
 
 :::
@@ -21,20 +21,20 @@
 #### 自定义显示内容
 
 <div class="demo-block">
-  <i-Switch v-model="value2">
+  <i-switch v-model="value2">
     <span slot="open">ON</span>
     <span slot="close">OFF</span>
-  </i-Switch>
+  </i-switch>
   <em>
 </div>
 
 ::: demo
 
 ```html
-<i-Switch v-model="value1">
+<i-switch v-model="value1">
   <span slot="open">ON</span>
   <span slot="close">OFF</span>
-</i-Switch>
+</i-switch>
 ```
 
 :::
