@@ -6,9 +6,9 @@ import Icon from './components/icon'
 import iInput from './components/input'
 import iText from './components/textarea'
 import {Radio, RadioGroup} from './components/radio'
-import Checkbox from './components/checkbox'
+import {Checkbox, CheckboxGroup} from './components/checkbox'
 
-const components = [iButton, ButtonGroup, Row, iCol, Icon, iInput, iText, Radio, RadioGroup, Checkbox]
+const components = [iButton, ButtonGroup, Row, iCol, Icon, iInput, iText, Radio, RadioGroup, Checkbox, CheckboxGroup]
 
 const install = function (Vue) {
   if (install.installed) return
@@ -30,5 +30,6 @@ export default {
   Icon,
   RadioGroup,
   Radio,
-  Checkbox
+  Checkbox,
+  CheckboxGroup
 }

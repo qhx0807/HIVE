@@ -2,10 +2,21 @@
   <label :class="wrapClasses">
     <span :class="innerClasses">
       <span :class="spanClasses"></span>
-      <input 
+      <input
+        v-if="!group"
         type="checkbox"
         class="ive-checkbox-inner-input"
         :value="value"
+        :disabled="disabled"
+        :checked="currentValue"
+        @change="change">
+
+        <input
+        v-if="group"
+        v-model="model"
+        type="checkbox"
+        class="ive-checkbox-inner-input"
+        :value="label"
         :disabled="disabled"
         :checked="currentValue"
         @change="change">
@@ -36,6 +47,7 @@ export default {
     return {
       prefixCls: 'ive-checkbox',
       group: false,
+      model: [],
       currentValue: this.checked,
     }
   },
@@ -44,12 +56,12 @@ export default {
     event: 'change'
   },
   mounted () {
-    // if(this.$parent.$options.name === 'RadioGroup') {
-    //   this.group = true
-    //   this.$parent.updateValue()
-    // }else{
-    //   this.currentValue = this.checked
-    // }
+    if(this.$parent.$options.name === 'CheckboxGroup') {
+      this.group = true
+      this.$parent.updateValue()
+    }else{
+      this.currentValue = this.checked
+    }
   },
   computed: {
     wrapClasses () {
@@ -80,10 +92,8 @@ export default {
         this.$emit('on-change', checked)
       }
 
-      if (this.group && this.label !== undefined){
-        this.$parent.change({
-          value: this.label
-        })
+      if (this.group){
+        this.$parent.change(this.model)
       }
 
     },
