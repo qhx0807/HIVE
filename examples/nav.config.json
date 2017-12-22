@@ -73,9 +73,14 @@
           "path": "/checkbox"
         },
         {
-        "desc": "开关",
-        "name": "switch",
-        "path": "/switch"
+          "desc": "开关",
+          "name": "switch",
+          "path": "/switch"
+        },
+        {
+          "desc": "下拉选择",
+          "name": "select",
+          "path": "/select"
         }
       ]
     },
