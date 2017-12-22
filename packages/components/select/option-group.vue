@@ -1,6 +1,6 @@
 <template>
   <dl>
-      <dt class="ive-select-option-tips">{{label}}</dt>
+    <dt>{{label}}</dt>
     <slot></slot>
   </dl>
 </template>

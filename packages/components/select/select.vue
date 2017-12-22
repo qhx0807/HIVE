@@ -94,6 +94,7 @@ export default {
   watch: {
     currentValue(val){
       this.$emit('change', val)
+      this.$emit('on-change', val)
     }
   },
   methods:{
