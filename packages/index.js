@@ -9,6 +9,7 @@ import {Radio, RadioGroup} from './components/radio'
 import {Checkbox, CheckboxGroup} from './components/checkbox'
 import iSwitch from './components/switch'
 import {iSelect, iOption, OptionGroup} from './components/select'
+import AreaSelect from './components/areaselect'
 
 const components = [
   iButton,
@@ -25,7 +26,8 @@ const components = [
   iSwitch,
   iSelect,
   iOption,
-  OptionGroup
+  OptionGroup,
+  AreaSelect
 ]
 
 const install = function (Vue) {
@@ -53,5 +55,6 @@ export default {
   iSwitch,
   iSelect,
   iOption,
-  OptionGroup
+  OptionGroup,
+  AreaSelect
 }
