@@ -81,7 +81,12 @@
           "desc": "下拉选择",
           "name": "select",
           "path": "/select"
-        }
+        },
+        {
+            "desc": "地区选择",
+            "name": "areaselect",
+            "path": "/areaselect"
+          }
       ]
     },
     {
