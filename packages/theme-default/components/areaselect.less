@@ -1,0 +1,111 @@
+@as-prefix-cls: ~'@{css-prefix}as';
+
+.@{as-prefix-cls} {
+
+  &-wrap {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+  }
+
+  &-input{
+    .input();
+    z-index: 99;
+    cursor: pointer;
+    background-color: #fff;
+  }
+
+  &-disabled{
+    pointer-events: none;
+    background-color: #f8f8f8!important;
+    cursor: not-allowed!important;
+  }
+
+  &-icon{
+    position: absolute;
+    top: 10px;
+    right: 8px;
+    font-size: 12px!important;
+    color: rgb(180, 179, 179);
+    transform: rotateZ(0deg);
+    transition: all .25s ease;
+    z-index: 99;
+    cursor: pointer;
+  }
+
+  &-option{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0px;
+    z-index: 100;
+    border: 1px solid @input-hover-border-color;
+    // border-top: 1px solid transparent;
+    padding-top: 20px;
+    
+    background-color: #fff;
+    ul{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: block;
+      margin-left: 8px;
+      li{
+        float: left;
+        margin-left: 12px;
+        // width: 82px;
+        padding: 0 12px;
+        text-align: center;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-size: 13px;
+        height: 30px;
+        line-height: 30px;
+        cursor: pointer;
+        border: 1px solid @input-hover-border-color;
+        border-bottom: none;
+        position: relative;
+        .icon-angle-down{
+          font-size: 13px;
+          font-weight: 700;
+        }
+        &.active{
+          border-bottom: 1px solid transparent;
+          color:tint(@primary-color, 60%);
+          &:after{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background-color: #fff;
+            left: 0;
+            top: 29px;
+            z-index: 999;
+          }
+        }
+      }
+    }
+  }
+
+  &-items{
+    clear: both;
+    border-top: 1px solid @input-hover-border-color;
+    margin: 0 20px;
+    padding: 20px 0;
+    max-height: 400px;
+    overflow: auto;
+    dd{
+      display: inline-block;
+      margin-right: 14px;
+      margin-bottom: 14px;
+      cursor: pointer;
+      &.selected{
+        color: tint(@primary-color, 60%);
+      }
+      &:hover{
+        color: tint(@primary-color, 70%);
+      }
+    }
+  }
+
+}
