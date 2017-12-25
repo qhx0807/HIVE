@@ -3,7 +3,7 @@
 #### 基本用法
 
 <div class="demo-block">
-  <i-select v-model="value1">
+  <i-select v-model="value1" width="250">
     <i-option v-for="(item, index) in options" :key="index" :value="item.value">{{item.name}}<i-option>
   </i-select>
   <em>value:  {{value1}}</em>
@@ -12,7 +12,7 @@
 ::: demo
 
 ```html
-  <i-select v-model="value1">
+  <i-select v-model="value1" width="250">
     <i-option v-for="(item, index) in options" :key="index" :value="item.value">{{item.name}}<i-option>
   </i-select>
 ```
@@ -22,7 +22,7 @@
 #### 分组
 
 <div class="demo-block">
-  <i-select v-model="value3">
+  <i-select v-model="value3" width="250">
     <OptionGroup label="水果">
       <i-option value="Apple">Apple</i-option>
       <i-option value="Orange">Orange</i-option>
@@ -44,7 +44,7 @@
 ::: demo
 
 ```html
-  <i-select v-model="value3">
+  <i-select v-model="value3" width="250">
     <OptionGroup label="水果">
       <i-option value="Apple">Apple</i-option>
       <i-option value="Orange">Orange</i-option>
@@ -107,6 +107,7 @@ export default {
 | placeholder | placeholder 占位提示            | String,Number | -      |
 | disabled    | 禁用当前项                      | Boolean       | false  |
 | label       | 在 OptionGroup 上使用，分组名称 | String,Number | -      |
+| width       | select的宽度 | String,Number | -      | 100%
 
 #### Select Events
 
