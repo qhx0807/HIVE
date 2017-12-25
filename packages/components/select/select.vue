@@ -1,5 +1,5 @@
 <template>
-  <div :class="wrapClass" v-clickoutside="hideOptions">
+  <div :class="wrapClass" v-clickoutside="hideOptions" :style="styles">
     <div :class="titleClass">
       <input :class="inputClass" :value="currentValue" type="text" @click="clickHandler" :placeholder="placeholder" :readonly="!filterable">
       <Icon type="icon-down" @click.native="clickHandler" :class="iconClass"></Icon>
@@ -32,6 +32,10 @@ export default {
     disabled:{
       type:Boolean,
       default:false
+    },
+    width:{
+      type:[Number, String],
+      default:''
     }
   },
   model: {
@@ -55,9 +59,15 @@ export default {
     },
     wrapClass(){
       return [
-        `${this.prefixCls}-wrap`,
-        
+        `${this.prefixCls}-wrap`
       ]
+    },
+    styles(){
+      if(this.width){
+        return {
+          width: `${this.width}px`
+        }
+      }
     },
     titleClass(){
       return [
