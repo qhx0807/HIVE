@@ -1,9 +1,36 @@
 @dp-prefix-cls: ~'@{css-prefix}dp';
 
 .@{dp-prefix-cls}{
+
   &-wrap{
     display: inline-block;
     width: 100%;
     position: relative;
   }
+
+  &-input{
+    .input();
+    z-index: 99;
+    cursor: pointer;
+    background-color: #fff;
+  }
+
+  &-disabled{
+    pointer-events: none;
+    background-color: #f8f8f8!important;
+    cursor: not-allowed!important;
+  }
+
+  &-icon{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 14px!important;
+    color: rgb(175, 174, 174);
+    transform: rotateZ(0deg);
+    transition: all .25s ease;
+    z-index: 99;
+    cursor: pointer;
+  }
+
 }
