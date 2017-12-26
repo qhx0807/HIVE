@@ -1,5 +1,7 @@
 <template>
-  <div>123</div>
+  <div>
+    <input type="date" name="" id="">
+  </div>
 </template>
 
 <script>

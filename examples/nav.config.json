@@ -83,10 +83,15 @@
           "path": "/select"
         },
         {
-            "desc": "地区选择",
-            "name": "areaselect",
-            "path": "/areaselect"
-          }
+          "desc": "地区选择",
+          "name": "areaselect",
+          "path": "/areaselect"
+        },
+        {
+          "desc": "日期选择",
+          "name": "datepicker",
+          "path": "/datepicker"
+        }
       ]
     },
     {

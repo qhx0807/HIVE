@@ -10,6 +10,7 @@ import {Checkbox, CheckboxGroup} from './components/checkbox'
 import iSwitch from './components/switch'
 import {iSelect, iOption, OptionGroup} from './components/select'
 import AreaSelect from './components/areaselect'
+import DatePicker from './components/date-picker'
 
 const components = [
   iButton,
@@ -27,7 +28,8 @@ const components = [
   iSelect,
   iOption,
   OptionGroup,
-  AreaSelect
+  AreaSelect,
+  DatePicker
 ]
 
 const install = function (Vue) {
@@ -56,5 +58,6 @@ export default {
   iSelect,
   iOption,
   OptionGroup,
-  AreaSelect
+  AreaSelect,
+  DatePicker
 }
