@@ -1,15 +1,15 @@
 <template>
   <div :class="wrapClass" :style="styles" v-clickoutside="closeHandler">
-    <input :class="inputClass" readonly :placeholder="placeholder" @click="clickHandler" type="text">
+    <input :class="inputClass" :value="currentValue" readonly :placeholder="placeholder" @click="clickHandler" type="text">
     <Icon type="icon-date" :class="iconClass"></Icon>
     <transition :name="transitionName">
       <div :class="optionClass" v-show="pickerShow">
         <div class="header">
-          <Icon type="icon-angle-left"></Icon>
-          <Icon type="icon-angle-right"></Icon>
+          <Icon type="icon-angle-left" @click.native="preMonHandler"></Icon>
+          <Icon type="icon-angle-right"  @click.native="nextMonHandler"></Icon>
           <div>
-            <span>2017年</span>
-            <span>12月</span>
+            <span>{{currentYer}}年</span>
+            <span>{{currentMon}}月</span>
           </div>
         </div>
         <div class="body">
@@ -23,7 +23,7 @@
             <li>六</li>
           </ul>
           <dl class="date-list">
-            <dd v-for="(d, index) in dateList" :key="index" :class="{'not-current': !d.currentMonth}">{{d.value}}</dd>
+            <dd @click="selectDateHandler(d.value)" v-for="(d, index) in dateList" :key="index" :class="{'not-current': !d.currentMonth}">{{d.value}}</dd>
           </dl>
         </div>
       </div>
@@ -48,10 +48,8 @@ export default {
     return {
       prefixCls: 'ive-dp',
       placement: true,
-      pickerShow: true,
-      month_o: [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
-      month_n: [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
-      monthName: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+      pickerShow: false,
+      currentValue:'',
       currentMon: new Date().getMonth()+1,
       currentYer: new Date().getFullYear(),
       currentDay: new Date().getDate()
@@ -140,8 +138,25 @@ export default {
       if (tem===0) return this.month_o[month]
       return this,month_n[month]
     },
-    getDays(){
-
+    preMonHandler(){
+      if(this.currentMon === 1){
+        this.currentYer -= 1
+        this.currentMon = 12
+      }else{
+        this.currentMon -= 1
+      }
+    },
+    nextMonHandler(){
+      if(this.currentMon === 12){
+        this.currentYer += 1
+        this.currentMon = 1
+      }else{
+        this.currentMon += 1
+      }
+    },
+    selectDateHandler(val){
+      this.currentValue = `${this.currentYer}-${this.currentMon}-${val}`
+      this.pickerShow = false
     }
   }
 }
