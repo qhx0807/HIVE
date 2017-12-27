@@ -3,5 +3,5 @@
 #### 基础用法
 
 <div class="demo-block">
-  <DatePicker width="250"></DatePicker>
+  <DatePicker width="260"></DatePicker>
 </div>
