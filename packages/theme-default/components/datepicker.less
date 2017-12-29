@@ -121,12 +121,30 @@
           font-size: 13px;
           padding: 7px 0;
           cursor: pointer;
+          position: relative;
           &:hover{
             color: tint(@primary-color, 60%);
             background-color: #f8f8f8;
           }
           &.not-current{
             color: rgb(182, 179, 179);
+          }
+          &.today{
+            &:before{
+              content: " ";
+              height: 7px;
+              width: 7px;
+              border-radius: 50%;
+              display: block;
+              background-color: tint(@primary-color, 0%);
+              position: absolute;
+              right: 2px;
+              top: 4px;
+            }
+          }
+          &.selected{
+            background-color: @primary-color;
+            color: #fff;
           }
         }
       }
