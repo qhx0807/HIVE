@@ -46,6 +46,14 @@ export default {
     placeholder: {
       type:[Number, String],
       default:'选择日期'
+    },
+    disabled:{
+      type:Boolean,
+      default: false
+    },
+    value: {
+      type:[String, Date],
+      default:''
     }
   },
   data() {
@@ -62,8 +70,24 @@ export default {
       selectedYear: null,
     }
   },
+  model: {
+    prop: 'value',
+    event: 'change'
+  },
   created () {
     // alert(this.currentMon)
+    if(this.value){
+      let dateObj = new Date(this.value)
+      this.currentYer = dateObj.getFullYear()
+      this.currentMon = dateObj.getMonth()+1
+      this.currentDay = dateObj.getDate()
+
+      this.selectedDay = dateObj.getDate()
+      this.selectedMonth = dateObj.getMonth()+1
+      this.selectedYear = dateObj.getFullYear()
+
+      this.currentValue = `${this.selectedYear}-${this.selectedMonth}-${this.selectedDay}`
+    }
   },
   computed: {
     transitionName() {
@@ -77,10 +101,20 @@ export default {
       }
     },
     wrapClass() {
-      return [`${this.prefixCls}-wrap`]
+      return [
+        `${this.prefixCls}-wrap`,
+        {
+          [`${this.prefixCls}-disabled`] : this.disabled
+        }
+      ]
     },
     inputClass() {
-      return [`${this.prefixCls}-input`]
+      return [
+        `${this.prefixCls}-input`,
+          {
+            [`${this.prefixCls}-disabled`] : this.disabled
+          }
+        ]
     },
     iconClass() {
       return [`${this.prefixCls}-icon`]
@@ -104,7 +138,7 @@ export default {
         }
       })
       let startDay = new Date(this.currentYer, this.currentMon-1, 1).getDay()
-      let previousMongthLength = new Date(this.currentYer, this.currentMon, 0).getDate()
+      let previousMongthLength = new Date(this.currentYer, this.currentMon-1, 0).getDate()
 
       for(let i = 0, len = startDay; i < len; i++){
         dateList.unshift({
@@ -185,6 +219,8 @@ export default {
       this.selectedMonth = this.currentMon
       this.selectedYear = this.currentYer
       this.currentValue = `${this.currentYer}-${this.currentMon}-${d.value}`
+      this.$emit('change', this.currentValue)
+      this.$emit('on-change', this.currentValue)
       this.pickerShow = false
     },
     isToday(d){
@@ -195,7 +231,7 @@ export default {
       return false
     },
     isSelected(d){
-      if(this.selectedDay === d.value && this.selectedMonth === this.currentMon && this.selectedYear === this.currentYer){
+      if(this.selectedDay === d.value && this.selectedMonth === this.currentMon && this.selectedYear === this.currentYer && d.currentMonth){
         return true
       }else{
         return false
