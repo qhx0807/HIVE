@@ -11,6 +11,8 @@ import iSwitch from './components/switch'
 import {iSelect, iOption, OptionGroup} from './components/select'
 import AreaSelect from './components/areaselect'
 import DatePicker from './components/date-picker'
+import Upload from './components/upload'
+import iProgress from './components/progress'
 
 const components = [
   iButton,
@@ -29,7 +31,9 @@ const components = [
   iOption,
   OptionGroup,
   AreaSelect,
-  DatePicker
+  DatePicker,
+  Upload,
+  iProgress
 ]
 
 const install = function (Vue) {
@@ -59,5 +63,7 @@ export default {
   iOption,
   OptionGroup,
   AreaSelect,
-  DatePicker
+  DatePicker,
+  Upload,
+  iProgress
 }
