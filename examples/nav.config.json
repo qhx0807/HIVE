@@ -91,6 +91,11 @@
           "desc": "日期选择",
           "name": "datepicker",
           "path": "/datepicker"
+        },
+        {
+          "desc": "上传",
+          "name": "upload",
+          "path": "/upload"
         }
       ]
     },
@@ -99,9 +104,9 @@
       "path": "/component",
       "items": [
         {
-          "desc": "头像",
-          "name": "avatar",
-          "path": "/avatar"
+          "desc": "进度条",
+          "name": "progress",
+          "path": "/progress"
         }
       ]
     },
