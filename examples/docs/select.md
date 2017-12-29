@@ -38,7 +38,7 @@
       <i-option value="mbp">Macbook Pro</i-option>
     </OptionGroup>
   </i-select>
-  
+
 </div>
 
 ::: demo
