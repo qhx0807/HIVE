@@ -23,7 +23,11 @@
             <li>六</li>
           </ul>
           <dl class="date-list">
-            <dd @click="selectDateHandler(d.value)" v-for="(d, index) in dateList" :key="index" :class="{'not-current': !d.currentMonth}">{{d.value}}</dd>
+            <dd @click="selectDateHandler(d)"
+              v-for="(d, index) in dateList"
+              :key="index"
+              :class="[{'not-current': !d.currentMonth},{'today':isToday(d)},{'selected':isSelected(d)},]"
+              >{{d.value}}</dd>
           </dl>
         </div>
       </div>
@@ -52,7 +56,10 @@ export default {
       currentValue:'',
       currentMon: new Date().getMonth()+1,
       currentYer: new Date().getFullYear(),
-      currentDay: new Date().getDate()
+      currentDay: new Date().getDate(),
+      selectedDay: null,
+      selectedMonth: null,
+      selectedYear: null,
     }
   },
   created () {
@@ -154,9 +161,45 @@ export default {
         this.currentMon += 1
       }
     },
-    selectDateHandler(val){
-      this.currentValue = `${this.currentYer}-${this.currentMon}-${val}`
+    selectDateHandler(d){
+      this.currentDay = d.value
+
+      if(d.currentMonth){
+
+      }else if(d.previousMonth){
+        if(this.currentMon === 1){
+          this.currentYer -= 1
+          this.currentMon = 12
+        }else{
+          this.currentMon -= 1
+        }
+      }else if(d.nextMonth){
+        if(this.currentMon === 12){
+          this.currentYer += 1
+          this.currentMon = 1
+        }else{
+          this.currentMon += 1
+        }
+      }
+      this.selectedDay = d.value
+      this.selectedMonth = this.currentMon
+      this.selectedYear = this.currentYer
+      this.currentValue = `${this.currentYer}-${this.currentMon}-${d.value}`
       this.pickerShow = false
+    },
+    isToday(d){
+      let y = new Date().getFullYear() === this.currentYer
+      let m = new Date().getMonth() +1 === this.currentMon
+      let t = new Date().getDate() === d.value
+      if(d.currentMonth && y && m && t) return true
+      return false
+    },
+    isSelected(d){
+      if(this.selectedDay === d.value && this.selectedMonth === this.currentMon && this.selectedYear === this.currentYer){
+        return true
+      }else{
+        return false
+      }
     }
   }
 }
