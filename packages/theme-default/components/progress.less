@@ -1,5 +1,17 @@
 @pr-prefix-cls: ~'@{css-prefix}progress';
 
+@keyframes progress-active{
+  0% {
+    width: 0px;
+  }
+  10%,20%,30% {
+    width: 0px;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
 .@{pr-prefix-cls}{
 
   &-wrap{
@@ -7,11 +19,62 @@
     width: 100%;
     font-size: 12px;
     position: relative;
-
   }
 
   &-outer{
+    padding-right: 55px;
+    vertical-align: middle;
+  }
 
+  &-inner{
+    background-color: #f3f3f3;
+    &-bg{
+      width: 0%;
+      background-color: #2db7f5;
+      position: relative;
+      transition: all .7s linear;
+      &.pending{
+        &:before{
+          content: "";
+          opacity: 0.3;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: #fff;
+          animation: progress-active 2s ease-in-out infinite;
+        }
+      }
+      &.success{
+        background-color: #19be6b;
+      }
+      &.error{
+        background-color: #ed3f14;
+      }
+    }
+  }
+
+  &-text{
+    display: inline-block;
+    width: 55px;
+    text-align: left;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    line-height: 10px;
+    padding-left: 5px;
+    font-size: 12px;
+    .icon-checkmark{
+      vertical-align: bottom;
+      font-size: 13px;
+      color: #19be6b;
+    }
+    .icon-closecircled{
+      vertical-align: bottom;
+      font-size: 13px;
+      color: #ed3f14;
+    }
   }
 
 }
