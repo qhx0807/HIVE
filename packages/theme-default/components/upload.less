@@ -2,4 +2,54 @@
 
 .@{upload-prefix-cls} {
 
+  &-wrap{
+    display: inline-block;
+    input[type=file]{
+      display: none;
+    }
+  }
+
+  &-tips{
+    font-size: 12px;
+    color: #606266;
+    margin-top: 7px;
+  }
+
+  &-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li{
+      font-size: 14px;
+      color: #606266;
+      line-height: 1.4;
+      margin-top: 10px;
+      width: 100%;
+      transition: all .5s cubic-bezier(.55,0,.1,1);
+      cursor: pointer;
+      vertical-align: middle;
+      width: 320px;
+      position: relative;
+      &:hover{
+        background-color: rgb(245, 247, 250);
+      }
+      &:first-child{
+        margin-top: 10px;
+      }
+      .iconfont{
+        font-size: 14px;
+      }
+      .icon-checkmark{
+        position: absolute;
+        right: 5px;
+        color: #67c23a;
+      }
+      .ive-progress-wrap{
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+      }
+    }
+  }
+
 }
