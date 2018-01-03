@@ -8,6 +8,10 @@
 
 `vm.$Message(options)`
 
+手动关闭方法
+
+`vm.$Message.closeAll()`
+
 <div class="demo-block">
   <i-button type="ghost" @click="fn1">成功</i-button>
   <i-button type="ghost" @click="fn2">消息</i-button>
