@@ -111,9 +111,14 @@
       ]
     },
     {
-      "desc": "Feedback",
+      "desc": "Notice",
       "path": "/component",
       "items": [
+        {
+          "desc": "警告",
+          "name": "alert",
+          "path": "/alert"
+        },
         {
           "desc": "全局提示",
           "name": "message",
