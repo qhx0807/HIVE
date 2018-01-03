@@ -15,20 +15,18 @@
 <script>
 export default {
   name: 'Message',
-  props:{
-
-  },
-  data () {
+  props: {},
+  data() {
     return {
-      prefixCls:'ive-msg',
+      prefixCls: 'ive-msg',
       type: 'info',
-      message:'',
-      visible:false,
+      message: '',
+      visible: false,
       icon: {
-        info:'icon-iconfontinfo',
-        success:'icon-success',
-        warning:'icon-warning3',
-        error:'icon-icon-test'
+        info: 'icon-iconfontinfo',
+        success: 'icon-success',
+        warning: 'icon-warning3',
+        error: 'icon-icon-test'
       },
       duration: 2500,
       timer: null,
@@ -36,7 +34,7 @@ export default {
     }
   },
   computed: {
-    wrapClass(){
+    wrapClass() {
       return [
         `${this.prefixCls}-wrap`,
         {
@@ -44,7 +42,7 @@ export default {
         }
       ]
     },
-    iconClass(){
+    iconClass() {
       return [
         `iconfont`,
         {
@@ -53,7 +51,7 @@ export default {
       ]
     }
   },
-  mounted () {
+  mounted() {
     this.startTimer()
     document.addEventListener('keydown', this.keydown)
   },
@@ -61,7 +59,7 @@ export default {
     closed(newVal) {
       if (newVal) {
         this.visible = false
-        this.$el.addEventListener('transitionend', this.destroyElement);
+        this.$el.addEventListener('transitionend', this.destroyElement)
       }
     }
   },
@@ -89,17 +87,17 @@ export default {
       }
     },
     destroyElement() {
-      this.$el.removeEventListener('transitionend', this.destroyElement);
-      this.$destroy(true);
+      this.$el.removeEventListener('transitionend', this.destroyElement)
+      this.$destroy(true)
       this.$el.parentNode.removeChild(this.$el)
-    },
+    }
   }
 }
 </script>
 <style lang="less" scoped>
-.fadeInUp-enter,.fadeInUp-leave-active {
+.fadeInUp-enter,
+.fadeInUp-leave-active {
   opacity: 0;
   transform: translate(-50%, -100%);
 }
-
 </style>
