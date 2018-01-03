@@ -13,6 +13,7 @@ import AreaSelect from './components/areaselect'
 import DatePicker from './components/date-picker'
 import Upload from './components/upload'
 import iProgress from './components/progress'
+import Message from './components/message'
 
 const components = [
   iButton,
@@ -33,12 +34,14 @@ const components = [
   AreaSelect,
   DatePicker,
   Upload,
-  iProgress
+  iProgress,
+  Message
 ]
 
 const install = function (Vue) {
   if (install.installed) return
   components.map(component => Vue.component(component.name, component))
+  Vue.prototype.$Message = Message
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
@@ -65,5 +68,6 @@ export default {
   AreaSelect,
   DatePicker,
   Upload,
-  iProgress
+  iProgress,
+  Message
 }
