@@ -1,11 +1,12 @@
-# Upload 上传
+# Upload 图片剪裁上传
 
-上传
 
 #### 基础用法
 
 <div class="demo-block">
-  <Upload action="http://upload-z2.qiniup.com" token="11111"></Upload>
+  <Upload action="https://jsonplaceholder.typicode.com/posts">
+    <span slot="tips">只能上传jpg/png文件，且不超过500kb</span>
+  </Upload>
 </div>
 
 
@@ -14,3 +15,7 @@
 123
 ```
 :::
+
+<style lang="less" >
+
+</style>
