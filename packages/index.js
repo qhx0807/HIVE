@@ -14,6 +14,7 @@ import DatePicker from './components/date-picker'
 import Upload from './components/upload'
 import iProgress from './components/progress'
 import Message from './components/message'
+import iAlert from './components/alert'
 
 const components = [
   iButton,
@@ -35,7 +36,8 @@ const components = [
   DatePicker,
   Upload,
   iProgress,
-  Message
+  Message,
+  iAlert
 ]
 
 const install = function (Vue) {
@@ -69,5 +71,6 @@ export default {
   DatePicker,
   Upload,
   iProgress,
-  Message
+  Message,
+  iAlert
 }
