@@ -1,0 +1,54 @@
+@msg-prefix-cls: ~'@{css-prefix}msg';
+
+.@{msg-prefix-cls}{
+
+  &-wrap{
+    min-width: 320px;
+    box-sizing: border-box;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    overflow: hidden;
+    transition: opacity 0.3s, transform .4s;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    z-index: 999;
+    top: 20px;
+    border: 1px solid #ebeef5;
+    border-radius: 0;
+    .iconfont{
+      font-size: 14px;
+    }
+    .text{
+      margin-left: 8px;
+      vertical-align: middle;
+      font-size: 13px;
+    }
+  }
+
+  &-info{
+    background-color: #f4f4f5;
+    color: #909399;
+    border: 1px solid tint(#909399, 60%);
+  }
+
+  &-success{
+    background-color: #f0f9eb;
+    color: #67c23a;
+    border: 1px solid tint(#67c23a, 60%);
+  }
+
+  &-wraning{
+    background-color: #fdf6ec;
+    color: #e6a23c;
+    border: 1px solid tint(#e6a23c, 60%);
+  }
+
+  &-error{
+    background-color: #fef0f0;
+    color: #f56c6c;
+    border: 1px solid tint(#f56c6c, 60%);
+  }
+}
