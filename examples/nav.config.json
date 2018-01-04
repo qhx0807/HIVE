@@ -123,6 +123,11 @@
           "desc": "全局提示",
           "name": "message",
           "path": "/message"
+        },
+        {
+          "desc": "文字提示",
+          "name": "tooltip",
+          "path": "/tooltip"
         }
       ]
     }
