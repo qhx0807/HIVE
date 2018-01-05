@@ -19,7 +19,6 @@
     position: absolute;
     display: block;
     font-size: 12px;
-    left: 0;
     bottom: calc(~"100% + 10px");
     &[placement=top-start]{
       .ive-tooltip-inner{
@@ -32,11 +31,63 @@
     }
 
     &[placement=top-center]{
+      left: 50%;
       transform: translateX(-50%);
       .ive-tooltip-inner{
         &:before{
           left: 50%;
           transform: translateX(-5px);
+          bottom: -10px;
+          border-top-color: @tcolor;
+        }
+      }
+    }
+
+    &[placement=top-end]{
+      right: 0;
+      .ive-tooltip-inner{
+        &:before{
+          right: 14px;
+          bottom: -10px;
+          border-top-color: @tcolor;
+        }
+      }
+    }
+
+    &[placement=left-start]{
+      right: calc(~"100% + 10px");
+      top: 0;
+      .ive-tooltip-inner{
+        &:before{
+          right: -10px;
+          top: 14px;
+          border-left-color: @tcolor;
+        }
+      }
+    }
+
+    &[placement=left-center]{
+      right: calc(~"100% + 10px");
+      bottom: 50%;
+      transform: translateY(50%);
+      .ive-tooltip-inner{
+        &:before{
+          right: -10px;
+          top: 50%;
+          transform: translateY(-5px);
+          border-left-color: @tcolor;
+        }
+      }
+    }
+
+    &[placement=left-end]{
+      right: calc(~"100% + 10px");
+      bottom: 0;
+      .ive-tooltip-inner{
+        &:before{
+          right: -10px;
+          bottom: 14px;
+          border-left-color: @tcolor;
         }
       }
     }
@@ -51,6 +102,7 @@
     text-decoration: none;
     background-color: @tcolor;
     white-space: nowrap;
+    line-height: 1.5;
     overflow: hidden;
     text-overflow: ellipsis;
     &:before{
@@ -61,9 +113,7 @@
       border-color: transparent;
       border-style: solid;
       border-width: 5px;
-      left: 14px;
-      border-top-color: @tcolor;
-      bottom: -10px;
+
     }
   }
 
