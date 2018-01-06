@@ -21,6 +21,7 @@
     font-size: 12px;
     bottom: calc(~"100% + 10px");
     &[placement=top-start]{
+      left:0;
       .ive-tooltip-inner{
         &:before{
           left: 14px;
@@ -91,6 +92,83 @@
         }
       }
     }
+
+    &[placement=right-start]{
+      left: calc(~"100% + 10px");
+      top: 0;
+      .ive-tooltip-inner{
+        &:before{
+          left: -10px;
+          top: 14px;
+          border-right-color: @tcolor;
+        }
+      }
+    }
+
+    &[placement=right-center]{
+      left: calc(~"100% + 10px");
+      bottom: 50%;
+      transform: translateY(50%);
+      .ive-tooltip-inner{
+        &:before{
+          left: -10px;
+          top: 50%;
+          transform: translateY(-5px);
+          border-right-color: @tcolor;
+        }
+      }
+    }
+
+    &[placement=right-end]{
+      left: calc(~"100% + 10px");
+      bottom: 0;
+      .ive-tooltip-inner{
+        &:before{
+          left: -10px;
+          bottom: 14px;
+          border-right-color: @tcolor;
+        }
+      }
+    }
+
+    &[placement=bottom-start]{
+      left: 0;
+      top: calc(~"100% + 10px");
+      .ive-tooltip-inner{
+        &:before{
+          left: 14px;
+          border-bottom-color: @tcolor;
+          top: -10px;
+        }
+      }
+    }
+
+    &[placement=bottom-center]{
+      left: 50%;
+      transform: translateX(-50%);
+      top: calc(~"100% + 10px");
+      .ive-tooltip-inner{
+        &:before{
+          border-bottom-color: @tcolor;
+          top: -10px;
+          left: 50%;
+          transform: translateX(-5px);
+        }
+      }
+    }
+
+    &[placement=bottom-end]{
+      right: 0;
+      top: calc(~"100% + 10px");
+      .ive-tooltip-inner{
+        &:before{
+          right: 14px;
+          top: -10px;
+          border-bottom-color: @tcolor;
+        }
+      }
+    }
+
 
   }
 
