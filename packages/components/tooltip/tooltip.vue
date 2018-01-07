@@ -65,9 +65,11 @@ export default {
       this.visible = true
     },
     mouseoutHandler(){
-      setTimeout(()=>{
-        this.visible = false
-      },100)
+      if(!this.always){
+        setTimeout(()=>{
+          this.visible = false
+        },100)
+      }
     }
   }
 }
