@@ -16,6 +16,7 @@ import iProgress from './components/progress'
 import Message from './components/message'
 import iAlert from './components/alert'
 import Tooltiip from './components/tooltip'
+import Modal from './components/modal'
 
 const components = [
   iButton,
@@ -39,7 +40,8 @@ const components = [
   iProgress,
   Message,
   iAlert,
-  Tooltiip
+  Tooltiip,
+  Modal
 ]
 
 const install = function (Vue) {
@@ -75,5 +77,6 @@ export default {
   iProgress,
   Message,
   iAlert,
-  Tooltiip
+  Tooltiip,
+  Modal
 }
