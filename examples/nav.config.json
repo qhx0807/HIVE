@@ -128,6 +128,11 @@
           "desc": "文字提示",
           "name": "tooltip",
           "path": "/tooltip"
+        },
+        {
+          "desc": "对话框",
+          "name": "modal",
+          "path": "/modal"
         }
       ]
     }
