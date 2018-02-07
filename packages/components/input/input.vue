@@ -64,7 +64,7 @@ export default {
   data() {
     return {
       preFixCls: 'ive-input',
-      inputValue: this.value,
+      inputValue: this.value
     }
   },
   computed: {

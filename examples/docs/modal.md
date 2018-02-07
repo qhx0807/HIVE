@@ -3,8 +3,8 @@
 ---
 
 <div class="demo-block">
-  <i-button type="primary">Open Modal</i-button>
-  <Modal></Modal>
+  <i-button type="primary" @click="fn">Open Modal</i-button>
+  <Modal v-model="modal"></Modal>
 </div>
 
 
@@ -12,14 +12,13 @@
 export default {
   data(){
     return {
-      value1: '',
-      value2: '',
-      value3: '',
+      modal: false
     }
   },
   methods:{
     fn(){
-      alert(this.value)
+      this.modal = true
+      console.log(this.modal)
     }
   }
 }
