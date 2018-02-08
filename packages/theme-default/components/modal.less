@@ -22,12 +22,46 @@
 
   &-warp{
     z-index: 1002;
-    width: 400px;
     margin: 0 auto;
     background: #fff;
     position: relative;
     margin-top: 18vh;
     box-sizing: border-box;
+    box-shadow: 1px 1px 25px rgba(0,0,0,.25);
+  }
+
+  &-head{
+    padding: 10px;
+    background-color: #f8f8f8;
+    height: 37px;
+    cursor: move;
+    font-size: 14px;
+    font-weight: 600;
+    position: relative;
+    border-bottom: 1px solid #eee;
+    &.center{
+      text-align: center;
+    }
+    .icon-cross{
+      position: absolute;
+      right: 16px;
+      top: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      color: #999;
+      &:hover{
+        color: #444;
+      }
+    }
+  }
+
+  &-body{
+    padding: 10px;
+  }
+
+  &-foot{
+    padding: 10px;
+    text-align: right;
   }
 
 }

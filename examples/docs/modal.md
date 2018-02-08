@@ -3,8 +3,12 @@
 ---
 
 <div class="demo-block">
-  <i-button type="primary" @click="fn">Open Modal</i-button>
-  <Modal v-model="modal"></Modal>
+  <i-button type="primary" @click="modal1=true">Open Modal1</i-button>
+  <i-button type="primary" @click="modal2=true">Open Modal2</i-button>
+  <Modal v-model="modal1" title="Modal Title" esc-closable>
+  </Modal>
+  <Modal v-model="modal2" title="Modal Title" esc-closable>
+  </Modal>
 </div>
 
 
@@ -12,13 +16,14 @@
 export default {
   data(){
     return {
-      modal: false
+      modal1: false,
+      modal2: false,
+      value1: 'tooltip'
     }
   },
   methods:{
     fn(){
-      this.modal = true
-      console.log(this.modal)
+      this.modal1 = true
     }
   }
 }
