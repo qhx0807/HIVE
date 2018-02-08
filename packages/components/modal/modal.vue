@@ -18,10 +18,11 @@
           {{title}}
           <i class="iconfont icon-cross" @click="closeModal"></i>
         </div>
-        <div class="ive-modal-body">body</div>
+        <div class="ive-modal-body"><slot></slot></div>
         <div class="ive-modal-foot">
-          <i-button @click="closeModal" type="text" style="margin-right:5px;">取消</i-button>
-          <i-button @click="closeModal" type="primary" style="margin-right:5px;">确定</i-button>
+          <i-button v-if="!isFooter" @click="cancelHandler" type="text" style="margin-right:5px;">取消</i-button>
+          <i-button :loading="loading" v-if="!isFooter" @click="okHandler" type="primary" style="margin-right:5px;">确定</i-button>
+          <slot v-if="isFooter" name="footer"></slot>
         </div>
       </div>
     </transition>
@@ -61,6 +62,10 @@ export default {
     width: {
       type: [Number, String],
       default: 520
+    },
+    loading: {
+      type: Boolean,
+      default: false
     }
   },
   directives: {
@@ -75,7 +80,7 @@ export default {
       visable: this.value,
       preFixCls: 'ive-modal',
       modalStyle: {
-        width: this.width + 'px',
+        width: '520px',
         marginLeft: 'auto',
         marginTop: '18vh',
       },
@@ -84,6 +89,7 @@ export default {
         offsetY: 0
       },
       isMove: false,
+      isFooter: true,
     }
   },
   watch: {
@@ -100,9 +106,11 @@ export default {
     }
   },
   created () {
+    this.modalStyle.width = this.width + 'px'
     this.visable = this.value
   },
   mounted () {
+    this.isFooter = this.$slots.footer !== undefined
     document.addEventListener('keyup', (event) => {
       if (this.escClosable && this.visable && event.keyCode === 27) {
         this.visable = false
@@ -141,6 +149,12 @@ export default {
     onMouseOut(ev){
       this.isMove = false
       ev.preventDefault()
+    },
+    cancelHandler(){
+      this.$emit('on-cancel')
+    },
+    okHandler(){
+      this.$emit('on-ok')
     }
   }
 }
