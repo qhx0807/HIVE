@@ -63,6 +63,9 @@ export default {
       }
     }
   },
+  beforeDestroy () {
+    this.clearTimer()
+  },
   methods: {
     clearTimer() {
       clearTimeout(this.timer)
