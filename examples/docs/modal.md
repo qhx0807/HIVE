@@ -7,11 +7,26 @@
   <i-button type="primary" @click="modal2=true">Open Modal2</i-button>
   <Modal v-model="modal1" title="Modal Title"  esc-closable>
     <div>123</div>
-    <div slot="footer">456</div>
+    <div slot="footer">
+      <i-button type="primary">自定义底部按钮</i-button>
+    </div>
   </Modal>
   <Modal v-model="modal2" title="Modal Title" @on-ok="ok" esc-closable>
   </Modal>
 </div>
+
+::: demo
+```html
+  <Modal v-model="modal1" title="Modal Title"  esc-closable>
+    <div>123</div>
+    <div slot="footer">
+      <i-button type="primary">自定义底部按钮</i-button>
+    </div>
+  </Modal>
+  <Modal v-model="modal2" title="Modal Title" @on-ok="ok" esc-closable>
+  </Modal>
+```
+:::
 
 <script>
 export default {
