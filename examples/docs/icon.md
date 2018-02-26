@@ -65,8 +65,9 @@ export default {
   },
   mounted () {
     this.clipboard = new Clipboard('.demo-span')
+    let t = this
     this.clipboard.on('success', function(e) {
-      alert('复制成功！')
+      t.$Message.info('代码已复制到剪切板！')
       e.clearSelection()
     })
   },
@@ -113,7 +114,7 @@ export default {
           margin-bottom:15px;
         }
       }
-      
+
     }
   }
 </style>
