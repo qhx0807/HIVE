@@ -107,6 +107,11 @@
           "desc": "进度条",
           "name": "progress",
           "path": "/progress"
+        },
+        {
+          "desc": "加载进度",
+          "name": "loadingBar",
+          "path": "/loadingBar"
         }
       ]
     },
@@ -133,6 +138,27 @@
           "desc": "对话框",
           "name": "modal",
           "path": "/modal"
+        },
+        {
+          "desc": "通知",
+          "name": "notification",
+          "path": "/notification"
+        }
+      ]
+    },
+    {
+      "desc": "Function",
+      "path": "/component",
+      "items": [
+        {
+          "desc": "导入/导出",
+          "name": "excel",
+          "path": "/excel"
+        },
+        {
+          "desc": "管理",
+          "name": "metainfo",
+          "path": "/metainfo"
         }
       ]
     }
