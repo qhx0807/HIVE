@@ -17,6 +17,7 @@ import Message from './components/message'
 import iAlert from './components/alert'
 import Tooltiip from './components/tooltip'
 import {Modal, Mb} from './components/modal'
+import Notification from './components/notification'
 
 const components = [
   iButton,
@@ -41,7 +42,8 @@ const components = [
   Message,
   iAlert,
   Tooltiip,
-  Modal
+  Modal,
+  Notification
 ]
 
 const install = function (Vue) {
@@ -79,5 +81,6 @@ export default {
   Message,
   iAlert,
   Tooltiip,
-  Modal
+  Modal,
+  Notification
 }
