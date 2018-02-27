@@ -1,0 +1,23 @@
+@noti-prefix-cls: ~'@{css-prefix}notif';
+
+.@{noti-prefix-cls}{
+
+  &-wrap{
+    display: flex;
+    width: 330px;
+    padding: 14px 26px 14px 13px;
+    box-sizing: border-box;
+    border: 1px solid #ebeef5;
+    position: fixed;
+    background-color: #fff;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+    transition: opacity .3s,transform .3s,left .3s,right .3s,top .4s,bottom .3s;
+    overflow: hidden;
+    z-index: 2000;
+    top: 16px;
+    right: 16px;
+    .right{
+      right: 16px;
+    }
+  }
+}
