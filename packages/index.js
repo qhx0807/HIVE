@@ -51,6 +51,7 @@ const install = function (Vue) {
   components.map(component => Vue.component(component.name, component))
   Vue.prototype.$Message = Message
   Vue.prototype.$Modal = Mb
+  Vue.prototype.$Notify = Notification
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
