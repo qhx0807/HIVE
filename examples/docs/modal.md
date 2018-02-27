@@ -2,6 +2,8 @@
 
 ---
 
+#### 基本使用
+
 <div class="demo-block">
   <i-button type="primary" @click="modal1=true">Open Modal1</i-button>
   <i-button type="primary" @click="modal2=true">Open Modal2</i-button>
@@ -23,8 +25,54 @@
       <i-button type="primary">自定义底部按钮</i-button>
     </div>
   </Modal>
-  <Modal v-model="modal2" title="Modal Title" @on-ok="ok" esc-closable>
-  </Modal>
+  <Modal v-model="modal2" title="Modal Title" @on-ok="ok" esc-closable></Modal>
+```
+:::
+
+#### 实例化调用
+
+封装了一些实例方法，用来创建一次性的轻量级对话框。实例以隐式创建`Vue`组件的方式在全局创建一个对话框，并在消失时移除，所以同时只能操作一个对话框。
+自定义配置：
+
+```javascript
+this.$Modal(options)
+this.$Modal.remove() // 移除
+```
+
+
+<div class="demo-block">
+  <i-button type="info" @click="show('info')">info</i-button>
+  <i-button type="success" @click="show('success')">success</i-button>
+  <i-button type="warning" @click="show('warning')">warning</i-button>
+  <i-button type="error" @click="show('error')">error</i-button>
+  <i-button type="primary" @click="show('confirm')">confirm</i-button>
+</div>
+
+::: demo
+```html
+  <i-button type="info" @click="show('info')">info</i-button>
+  <i-button type="success" @click="show('success')">success</i-button>
+  <i-button type="warning" @click="show('warning')">warning</i-button>
+  <i-button type="error" @click="show('error')">error</i-button>
+  <i-button type="primary" @click="show('confirm')">confirm</i-button>
+  <script>
+    show(type){
+      this.$Modal({
+        type: type,
+        title: 'Modal Title',
+        content: 'hehehe!',
+        loading: true,
+        onOk: () => {
+          this.$Message.info('Clicked ok')
+          this.$Modal.remove()
+        },
+        onCancel: () => {
+          this.$Message.info('Clicked cancel')
+          this.$Modal.remove()
+        }
+      })
+    }
+  </script>
 ```
 :::
 
@@ -43,6 +91,22 @@ export default {
     },
     ok(){
       this.modal2 = false
+    },
+    show(type){
+      this.$Modal({
+        type: type,
+        title: 'Modal Title',
+        content: 'hehehe!',
+        loading: true,
+        onOk: () => {
+          this.$Message.info('Clicked ok')
+          this.$Modal.remove()
+        },
+        onCancel: () => {
+          this.$Message.info('Clicked cancel')
+          this.$Modal.remove()
+        }
+      })
     }
   }
 }

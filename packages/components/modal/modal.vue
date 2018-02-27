@@ -1,11 +1,11 @@
 <template>
-  <div class="ive-modal" v-show="visable" tabindex="-1">
+  <div class="ive-modal" v-show="visible" tabindex="-1">
     <div v-show="backdrop" class="ive-modal-shade" ></div>
     <!-- @drop="drop($event)" @dragover="allowDrop($event)" @dragstart="drag($event)" -->
     <transition name="modal">
       <div key="modal"
         class="ive-modal-warp"
-        v-show="visable"
+        v-show="visible"
         v-clickoutside="onClickBackdrop"
         :style="modalStyle"
         >
@@ -77,7 +77,7 @@ export default {
   },
   data () {
     return {
-      visable: this.value,
+      visible: this.value,
       preFixCls: 'ive-modal',
       modalStyle: {
         width: '520px',
@@ -93,8 +93,8 @@ export default {
     }
   },
   watch: {
-    visable (val) {
-      this.$emit('change', this.visable)
+    visible (val) {
+      this.$emit('change', this.visible)
       if(val){
         addClass(document.getElementsByTagName('body')[0], 'modal-show')
       }else{
@@ -102,18 +102,18 @@ export default {
       }
     },
     value (val) {
-      this.visable = val
+      this.visible = val
     }
   },
   created () {
     this.modalStyle.width = this.width + 'px'
-    this.visable = this.value
+    this.visible = this.value
   },
   mounted () {
     this.isFooter = this.$slots.footer !== undefined
     document.addEventListener('keyup', (event) => {
-      if (this.escClosable && this.visable && event.keyCode === 27) {
-        this.visable = false
+      if (this.escClosable && this.visible && event.keyCode === 27) {
+        this.visible = false
       }else{
         return
       }
@@ -121,12 +121,12 @@ export default {
   },
   methods: {
     closeModal () {
-      this.visable = false
-      this.$emit('change', this.visable)
+      this.visible = false
+      this.$emit('change', this.visible)
     },
     onClickBackdrop () {
       if (this.backdropClosable) {
-        this.visable = false
+        this.visible = false
       }
     },
     onMouseDown (ev) {
@@ -140,7 +140,7 @@ export default {
       ev.preventDefault()
     },
     onMouseMove(ev){
-      if(this.isMove && this.visable){
+      if(this.isMove && this.visible){
         this.modalStyle.marginLeft = (ev.clientX - this.dragStart.offsetX) + 'px'
         this.modalStyle.marginTop = (ev.clientY - this.dragStart.offsetY) + 'px'
       }

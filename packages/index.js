@@ -16,7 +16,7 @@ import iProgress from './components/progress'
 import Message from './components/message'
 import iAlert from './components/alert'
 import Tooltiip from './components/tooltip'
-import Modal from './components/modal'
+import {Modal, Mb} from './components/modal'
 
 const components = [
   iButton,
@@ -48,6 +48,7 @@ const install = function (Vue) {
   if (install.installed) return
   components.map(component => Vue.component(component.name, component))
   Vue.prototype.$Message = Message
+  Vue.prototype.$Modal = Mb
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
