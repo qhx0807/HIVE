@@ -59,7 +59,7 @@ export default {
     closed(newVal) {
       if (newVal) {
         this.visible = false
-        this.$el.addEventListener('transitionend', this.destroyElement)
+        this.$el.addEventListener('transitionend', this.destroyElement())
       }
     }
   },
