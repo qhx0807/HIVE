@@ -4,9 +4,7 @@
     <div class="home-wrap">
       <transition name="fadeInUp">
         <div class="title" v-if="visible">
-          <span class="first">great</span>
-          <strong>HIVE</strong>
-          <span>a ui components of vue 2.x</span>
+          <!-- <img src="../assets/img/hive.png" alt=""> -->
         </div>
       </transition>
 
@@ -67,26 +65,9 @@ export default {
       color: #a275ff;
       font-weight: 550;
       line-height: 68px;
-      .first{
-        position: relative;
-        color: #191617;
-        text-transform: capitalize;
-        &:after{
-          width: 77px;
-          content: '';
-          position: absolute;
-          top: -11px;
-          left: 0;
-          height: 5px;
-          background: #191617;
-          border-radius: 10px;
-          transition: all 3s ease-out;
-        }
-      }
-      strong{
-        font-weight: 550;
-        color: #191617;
-        text-transform: uppercase;
+      text-align: center;
+      img{
+        height: 100%;
       }
     }
     .nopro{
