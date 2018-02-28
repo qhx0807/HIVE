@@ -1,19 +1,14 @@
 {
   "开发指南": [
     {
-      "name": "guid",
-      "path": "/index",
+      "name": "guide",
+      "path": "/guide",
       "desc": "介绍"
     },
     {
       "name": "install",
       "path": "/index",
       "desc": "安装"
-    },
-    {
-      "name": "getStart",
-      "path": "/index",
-      "desc": "快速上手"
     },
     {
       "name": "logs",
