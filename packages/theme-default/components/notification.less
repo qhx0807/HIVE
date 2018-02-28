@@ -1,4 +1,4 @@
-@noti-prefix-cls: ~'@{css-prefix}notif';
+@noti-prefix-cls: ~'@{css-prefix}notify';
 
 .@{noti-prefix-cls}{
 
@@ -14,10 +14,67 @@
     transition: opacity .3s,transform .3s,left .3s,right .3s,top .4s,bottom .3s;
     overflow: hidden;
     z-index: 2000;
-    top: 16px;
-    right: 16px;
-    .right{
+    color: #606266;
+    &.right{
       right: 16px;
     }
+    &.top{
+      top: 16px;
+    }
+    &.left{
+      left: 16px;
+    }
+    &.bottom{
+      bottom: 16px;
+    }
+
+    .icon-cross{
+      position: absolute;
+      right: 15px;
+      top: 14px;
+      color: #909399;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 550;
+      &:hover{
+        color:#1c1c1d;
+        font-weight: 600;
+      }
+    }
+  }
+
+  &-icon.iconfont{
+    font-size: 24px;
+    height: 24px;
+    width: 24px;
+    &.icon-iconfontinfo{
+      color: #2d8cf0;
+    }
+    &.icon-success{
+      color: #19be6b;
+    }
+    &.icon-warning3{
+      color: #ff9900;
+    }
+    &.icon-icon-test{
+      color: #ed3f14;
+    }
+  }
+
+  &-group{
+    margin-left: 13px;
+    h2{
+      font-size: 16px;
+      color: #303133;
+      margin: 0;
+    }
+  }
+
+  &-content{
+    font-size: 14px;
+    line-height: 21px;
+    margin: 4px 0 0;
+    color: #606266;
+    text-align: justify;
   }
 }
