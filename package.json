@@ -28,7 +28,8 @@
     "markdown-it-container": "^2.0.0",
     "vue": "^2.5.2",
     "vue-markdown-loader": "^2.3.0",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "xlsx": "^0.12.3"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
