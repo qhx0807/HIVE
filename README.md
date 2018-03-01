@@ -22,13 +22,13 @@
 
 ## Install
 
-* npm 
+* npm
 
 ```bash
 npm install hive
 ```
 
-* yarm 
+* yarm
 
 ```bash
 yarn add hive
@@ -37,7 +37,7 @@ yarn add hive
 ## Use
 
 ```js
-import HIVE from 'vvui'
+import HIVE from 'hive'
 import '../node_modules/HIVE/packages/theme-default/lib/index.css'
 
 Vue.use(HIVE)
