@@ -18,6 +18,7 @@ import iAlert from './components/alert'
 import Tooltiip from './components/tooltip'
 import {Modal, Mb} from './components/modal'
 import Notification from './components/notification'
+import LoadingBar from './components/loading-bar/'
 
 const components = [
   iButton,
@@ -43,7 +44,8 @@ const components = [
   iAlert,
   Tooltiip,
   Modal,
-  Notification
+  Notification,
+  LoadingBar
 ]
 
 const install = function (Vue) {
@@ -52,6 +54,7 @@ const install = function (Vue) {
   Vue.prototype.$Message = Message
   Vue.prototype.$Modal = Mb
   Vue.prototype.$Notify = Notification
+  Vue.prototype.$LoadingBar = LoadingBar
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
@@ -83,5 +86,6 @@ export default {
   iAlert,
   Tooltiip,
   Modal,
-  Notification
+  Notification,
+  LoadingBar
 }
