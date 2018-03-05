@@ -9,16 +9,42 @@
 `start()`、`end()`、`error()`
 
 <div class="demo-block">
-  <i-button type="ghost" @click="fn">开始</i-button>
-  <i-button type="ghost">结束</i-button>
-  <i-button type="ghost">错误</i-button>
+  <i-button type="ghost" @click="start">开始</i-button>
+  <i-button type="ghost" @click="finish">结束</i-button>
+  <i-button type="ghost" @click="error">错误</i-button>
 </div>
 
 ::: demo
+
 ```html
+  <div class="demo-block">
+    <i-button type="ghost" @click="start">开始</i-button>
+    <i-button type="ghost" @click="finish">结束</i-button>
+    <i-button type="ghost" @click="error">错误</i-button>
+  </div>
+  <script>
+    start(){
+      this.$LoadingBar.start()
+    },
+    finish(){
+      this.$LoadingBar.success()
+    },
+    error() {
+      this.$LoadingBar.error()
+    }
+  </script>
 
 ```
+
 :::
+
+#### Function
+
+| 方法    | 说明 |
+| ------- | ---- |
+| vm.$LoadingBar.start()   | 开始 |
+| vm.$LoadingBar.success() | 成功 |
+| vm.$LoadingBar.error()   | 出错 |
 
 <script>
 export default {
@@ -28,9 +54,15 @@ export default {
     }
   },
   methods:{
-    fn(){
-      this.$LoadingBar()
+    start(){
+      this.$LoadingBar.start()
     },
+    finish(){
+      this.$LoadingBar.success()
+    },
+    error() {
+      this.$LoadingBar.error()
+    }
   }
 }
 </script>
