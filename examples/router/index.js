@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import navConf from '../nav.config.json'
+import Meta from 'vue-meta'
 
 Vue.use(Router)
+Vue.use(Meta)
 
 let routes = []
 
