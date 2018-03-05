@@ -19,33 +19,42 @@
   ```
 * 使用
   ```javascript
-  metaInfo: {
-    title: 'vue-meta Title', // set a title
-    titleTemplate: '%s - Yay!', // title is now "My Example App - Yay!"
-    htmlAttrs: {
-      lang: 'en',
-      amp: undefined 
+  data () {
+    return {
+      myTitle: '标题'
     }
-  }
+  },
+  metaInfo() {
+    return {
+      title: this.myTitle, 
+      titleTemplate: '%s - by vue-meta',
+      htmlAttrs: {
+        lang: 'en',
+        amp: undefined 
+      }
+    }
+  },
   ```
 
 <script>
 export default {
-  data(){
+  data () {
     return {
-      title: 'title',
+      myTitle: '标题'
     }
   },
-  metaInfo: {
-    title: 'vue-meta Title', // set a title
-    titleTemplate: '%s - Yay!', // title is now "My Example App - Yay!"
-    htmlAttrs: {
-      lang: 'en',
-      amp: undefined 
+  metaInfo() {
+    return {
+      title: this.myTitle, 
+      titleTemplate: '%s - by vue-meta',
+      htmlAttrs: {
+        lang: 'en',
+        amp: undefined 
+      }
     }
   },
   created(){
-
+    
   },
   mounted(){
     setTimeout(() => {
