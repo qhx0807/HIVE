@@ -107,6 +107,47 @@
           "desc": "加载进度",
           "name": "loadingBar",
           "path": "/loadingBar"
+        },
+        {
+          "desc": "时间轴",
+          "name": "timeLine",
+          "path": "/timeLine"
+        },
+        {
+          "desc": "轮播图",
+          "name": "carousel",
+          "path": "/carousel"
+        },
+        {
+          "desc": "折叠面板",
+          "name": "collapse",
+          "path": "/collapse"
+        },
+        {
+          "desc": "表格",
+          "name": "table",
+          "path": "/table"
+        }
+      ]
+    },
+    {
+      "desc": "Navigation",
+      "path": "/component",
+      "items": [
+        {
+          "desc": "导航菜单",
+          "name": "menu",
+          "path": "/menu"
+        },
+        {
+          "desc": "标签页",
+          "name": "tabs",
+          "path": "/tabs"
+        },
+        {
+          "desc": "下拉菜单",
+          "name": "dropdown",
+          "path": "/dropdown"
         }
       ]
     },
