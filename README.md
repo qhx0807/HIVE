@@ -10,38 +10,9 @@
 
 ## Features
 
-* 基于 `Vue` 开发的UI组件
+* 基于 `Vue2.x` 开发的UI组件
 * 使用 `npm`、`webpack`、`babel` 支持ES2015
 * 提供友好的 Api，高度灵活的可自定义组件
-
-## Browser support
-
-* 现代浏览器和 IE9 及以上
-* [Electron](http://electron.atom.io/)
-* [NW.js](http://nwjs.io)
-
-## Install
-
-* npm
-
-```bash
-npm install hive
-```
-
-* yarm
-
-```bash
-yarn add hive
-```
-
-## Use
-
-```js
-import HIVE from 'hive'
-import '../node_modules/HIVE/packages/theme-default/lib/index.css'
-
-Vue.use(HIVE)
-```
 
 ## Links
 
