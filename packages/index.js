@@ -20,6 +20,7 @@ import {Modal, Mb} from './components/modal'
 import Notification from './components/notification'
 import LoadingBar from './components/loading-bar/'
 import {Timeline, TimelineItem} from './components/time-line'
+import {Carousel, CarouselItem} from './components/carousel'
 
 const components = [
   iButton,
@@ -48,7 +49,9 @@ const components = [
   Notification,
   LoadingBar,
   Timeline,
-  TimelineItem
+  TimelineItem,
+  Carousel,
+  CarouselItem
 ]
 
 const install = function (Vue) {
@@ -92,5 +95,7 @@ export default {
   Notification,
   LoadingBar,
   Timeline,
-  TimelineItem
+  TimelineItem,
+  Carousel,
+  CarouselItem
 }
