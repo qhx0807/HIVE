@@ -19,6 +19,7 @@ import Tooltiip from './components/tooltip'
 import {Modal, Mb} from './components/modal'
 import Notification from './components/notification'
 import LoadingBar from './components/loading-bar/'
+import {Timeline, TimelineItem} from './components/time-line'
 
 const components = [
   iButton,
@@ -45,7 +46,9 @@ const components = [
   Tooltiip,
   Modal,
   Notification,
-  LoadingBar
+  LoadingBar,
+  Timeline,
+  TimelineItem
 ]
 
 const install = function (Vue) {
@@ -87,5 +90,7 @@ export default {
   Tooltiip,
   Modal,
   Notification,
-  LoadingBar
+  LoadingBar,
+  Timeline,
+  TimelineItem
 }
