@@ -1,0 +1,60 @@
+@timeline-prefix-cls: ~'@{css-prefix}timeline';
+
+.@{timeline-prefix-cls} {
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  &-item{
+    margin: 0;
+    padding: 0 0 10px;
+    list-style: none;
+    position: relative;
+    &:last-child &-line{
+      display: none;
+    }
+    &-line{
+      height: 100%;
+      border-left: 1px solid #e9eaec;
+      position: absolute;
+      left: 6px;
+      top: 0;
+    }
+    &-icon{
+      width: 13px;
+      height: 13px;
+      background-color: #fff;
+      border-radius: 50%;
+      border: 1px solid transparent;
+      position: absolute;
+      border-color: #2d8cf0;
+      color: #2d8cf0;
+      top: 0px;
+      &.custom-icon{
+        width: 40px;
+        height: auto;
+        margin-top: 7px;
+        padding: 2px 0;
+        text-align: center;
+        line-height: 1;
+        border: 0;
+        border-radius: 0;
+        font-size: 14px;
+        position: absolute;
+        left: -14px;
+        transform: translateY(-50%);
+      }
+    }
+    &-content{
+      padding: 1px 1px 10px 24px;
+      font-size: 12px;
+      position: relative;
+      top: -4px;
+    }
+  }
+
+  &.pending .ive-timeline-item:nth-last-child(2) .ive-timeline-item-line{
+    border-left: 1px dotted #e9eaec;
+  }
+}
