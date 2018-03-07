@@ -21,6 +21,7 @@ import Notification from './components/notification'
 import LoadingBar from './components/loading-bar/'
 import {Timeline, TimelineItem} from './components/time-line'
 import {Carousel, CarouselItem} from './components/carousel'
+import Collapse from './components/collapse'
 
 const components = [
   iButton,
@@ -51,7 +52,8 @@ const components = [
   Timeline,
   TimelineItem,
   Carousel,
-  CarouselItem
+  CarouselItem,
+  Collapse
 ]
 
 const install = function (Vue) {
@@ -97,5 +99,6 @@ export default {
   Timeline,
   TimelineItem,
   Carousel,
-  CarouselItem
+  CarouselItem,
+  Collapse
 }
